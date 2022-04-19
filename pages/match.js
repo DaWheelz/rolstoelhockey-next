@@ -21,7 +21,8 @@ class Match extends Component {
       role: '',
     };
   }
-  componentWillMount() {
+  
+  UNSAFE_componentWillMount() {
     this.getGameDays();
     this.getAcces();
   };

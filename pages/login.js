@@ -110,53 +110,53 @@ class Login extends Component {
     render() {
         return (
             <div className="pageblock">
-                <div class="jumbotron">
-                    <h1 class="display-3">Login</h1>
+                <div className="jumbotron">
+                    <h1 className="display-3">Login</h1>
                     {this.state.loggingIn ?
                         <div>
                             <img src={LoadingSVG} alt="" />
                         </div>
                         : null}
-                    {this.state.errorMessage ? <div class="alert alert-danger" role="alert">
+                    {this.state.errorMessage ? <div className="alert alert-danger" role="alert">
                         {this.state.errorMessage}
                     </div> : null}
                     {!this.state.loggingIn ?
                         <form onSubmit={e => this.Login(e)}>
-                            <div class="form-group">
-                                <label for="username">Gebruikersnaam</label>
+                            <div className="form-group">
+                                <label htmlFor="username">Gebruikersnaam</label>
                                 <input
                                     onChange={this.onChangeUsername.bind(this)}
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
                                     id="username"
                                     aria-describedby="usernameHelp"
                                     placeholder="Voer gebruikersnaam in"
                                     required />
-                                <h5 id="usernameHelp" class="form-text text-muted">
+                                <h5 id="usernameHelp" className="form-text text-muted">
                                     Voer je gebruikersnaam in om in te loggen.
                              </h5>
                             </div>
-                            <div class="form-group">
-                                <label for="password">Wachtwoord</label>
+                            <div className="form-group">
+                                <label htmlFor="password">Wachtwoord</label>
                                 <input
                                     onChange={this.onChangePassword.bind(this)}
                                     type="password"
-                                    class="form-control"
+                                    className="form-control"
                                     id="password"
                                     aria-describedby="passwordHelp"
                                     placeholder="Wachtwoord"
                                     autoComplete={false}
                                     required />
-                                <h5 id="passwordHelp" class="form-text text-muted">
+                                <h5 id="passwordHelp" className="form-text text-muted">
                                     Voer je wachtwoord in om in te loggen.
                              </h5>
                                 <br />
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary">Login</button>
                                 </div>
                                 <label>Nog geen account?
                                 <Link href="/signup">
-                                    <button type="button" class="btn btn-default btn-xs" style={{ margin: '0px', paddingTop: '2px', color: '#ef790c' }}>Registreer</button>
+                                    <button type="button" className="btn btn-default btn-xs" style={{ margin: '0px', paddingTop: '2px', color: '#ef790c' }}>Registreer</button>
                                 </Link>
                                 </label>
                             </div>

@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import "./addmatch.css";
 import axios from 'axios';
-import '../../admin.css'
-import { CollectionsOutlined, ThreeDRotationSharp, TurnedInSharp } from '@material-ui/icons';
 
 var bgColors = {
     "Default": "#81b71a",
@@ -37,7 +34,7 @@ class AddMatch extends Component {
         
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.getTeams();
         this.getGameDays();
     }
@@ -176,8 +173,8 @@ class AddMatch extends Component {
     render() {
         return (
             <div className="pageblock" style={{ display: 'flex', justifyContent: 'center' }}>
-                <div class="text-center border border-light p-5" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-                    <p class="h4 mb-4" style={{ fontWeight: '100' }}>Wedstrijd toevoegen</p>
+                <div className="text-center border border-light p-5" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+                    <p className="h4 mb-4" style={{ fontWeight: '100' }}>Wedstrijd toevoegen</p>
                         <div className="form-group" >
                             <label>Team: </label>
                             <select className="custom-select" value={this.state.teamA} onChange={(e) => { this.setState({teamA: e.target.value }) }}>
@@ -244,10 +241,10 @@ class AddMatch extends Component {
                                 ))}
                                 </select>
                         </div>
-                        <button class="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit}>Toevoegen</button>
+                        <button className="btn btn-info btn-block" style={{ backgroundColor: bgColors["Button-Color"], border: 'none' }} onClick={this.onSubmit}>Toevoegen</button>
                         {this.state.succes_message
                             ?
-                            <div class="alert alert-success" role="alert">
+                            <div className="alert alert-success" role="alert">
                                 Match added
                             </div>
                             :

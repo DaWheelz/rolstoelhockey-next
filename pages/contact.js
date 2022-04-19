@@ -89,7 +89,7 @@ class Contact extends Component {
                 </div>
                 {this.state.mailSend
                     ?
-                    <div class="alert alert-success" role="alert">
+                    <div className="alert alert-success" role="alert">
                         Het formulier is succesvol verstuurd!
                     </div>
                     :
@@ -113,22 +113,22 @@ class Contact extends Component {
                             </div>
                             <div className="form-group">
                                 <div style={{ display: 'flex' }}>
-                                    <div class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" value="Bug" class="custom-control-input" id="checkboxBug" onChange={this.onChangeCheckBox} />
-                                        <label class="custom-control-label" for="checkboxBug">Bug/probleem</label>
+                                    <div className="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" value="Bug" className="custom-control-input" id="checkboxBug" onChange={this.onChangeCheckBox} />
+                                        <label className="custom-control-label" htmlFor="checkboxBug">Bug/probleem</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" value="Question" class="custom-control-input" id="checkboxQuestion" onChange={this.onChangeCheckBox} />
-                                        <label class="custom-control-label" for="checkboxQuestion">Vraag</label>
+                                    <div className="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" value="Question" className="custom-control-input" id="checkboxQuestion" onChange={this.onChangeCheckBox} />
+                                        <label className="custom-control-label" htmlFor="checkboxQuestion">Vraag</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" value="Bug" class="custom-control-input" id="checkboxOther" onChange={this.onChangeCheckBox} />
-                                        <label class="custom-control-label" for="checkboxOther">Anders...</label>
+                                    <div className="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" value="Bug" className="custom-control-input" id="checkboxOther" onChange={this.onChangeCheckBox} />
+                                        <label className="custom-control-label" htmlFor="checkboxOther">Anders...</label>
                                     </div>
                                 </div>
                             </div>
                             <div className="form-group" >
-                                <textarea class="form-control" placeholder="Vertel meer..." id="exampleFormControlTextarea1" onChange={this.onChangeTextArea} rows="3"></textarea>
+                                <textarea className="form-control" placeholder="Vertel meer..." id="exampleFormControlTextarea1" onChange={this.onChangeTextArea} rows="3"></textarea>
                             </div>
                             <div className="form-group">
                                 <button type="submit" label="Primary" style={{ backgroundColor: bgColors["Button-Color"], color: 'white', border: 'none', borderRadius: '10px', padding: '7px' }}>Verstuur</button>

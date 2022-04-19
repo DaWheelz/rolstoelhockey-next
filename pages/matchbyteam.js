@@ -22,7 +22,8 @@ class MatchByTeam extends Component {
       role: '',
     };
   }
-  componentWillMount() {
+  
+  UNSAFE_componentWillMount() {
     this.getAcces();
     this.getTeams();
   };
@@ -83,7 +84,7 @@ class MatchByTeam extends Component {
     const matchItems = this.state.matches.map((match, _id) => {
     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
-            <div className="match-group">
+            <div key={match._id} className="match-group">
               <div className="match-date">{game_date}</div>
               <div className="match-time">{match.played_at}</div>
               <div className="match-teama">{match.teamA}</div>

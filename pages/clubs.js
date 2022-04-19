@@ -13,7 +13,7 @@ class Club extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.getClubs();
         // if (localStorage.getItem('token')) {
         //     this.setState({ loggedIn: true })

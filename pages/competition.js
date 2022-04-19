@@ -37,15 +37,14 @@ class Settings extends Component {
     }
 
     getTeamsH(compid) {
-        this.state.compId = compid;
+        this.setState({ compId: compid});
         axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid + "/H").then(response => {
             this.setState({ teamsH: response.data });
         });
     }
 
     getTeamsE(compid) {
-        this.state.compId = compid;
-        console.log(compid);
+        this.setState({ compId: compid});
         axios.get(`https://rolstoelhockey-backend.herokuapp.com/clubs/team/` + compid + "/E").then(response => {
             this.setState({ teamsE: response.data });
         });

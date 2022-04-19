@@ -21,7 +21,7 @@ class Home extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.getMatchesH();
     this.getMatchesE();
     this.getUpcomingH();
@@ -57,7 +57,7 @@ class Home extends Component {
     const matchItemsH = this.state.matchesH.map((match, _id) => {
       let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
-          <div className="match-group">
+          <div key={match._id} className="match-group">
             <div className="match-time-date">
               <div className="match-time">{match.played_at}</div>
               <div className="match-date">{game_date}</div>
@@ -75,7 +75,7 @@ class Home extends Component {
     const matchItemsE = this.state.matchesE.map((match, _id) => {
       let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
-          <div className="match-group">
+          <div key={match._id} className="match-group">
             <div className="match-time-date">
               <div className="match-time">{match.played_at}</div>
               <div className="match-date">{game_date}</div>
@@ -106,8 +106,7 @@ class Home extends Component {
       }
 
       return (
-        <div>
-          <div className="event">
+          <div key={day._id} className="event">
             <div className="event-mid">
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
@@ -116,7 +115,6 @@ class Home extends Component {
               <a className='button' href={locationurl}>Navigeer</a>
             </div>
           </div>
-        </div>
       );
     });
 
@@ -136,8 +134,7 @@ class Home extends Component {
       }
 
       return (
-        <div>
-          <div className="event">
+          <div key={day._id} className="event">
             <div className="event-mid">
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
               <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
@@ -146,7 +143,6 @@ class Home extends Component {
               <a className='button' href={locationurl}>Navigeer</a>
             </div>
           </div>
-        </div>
       );
     });
 
