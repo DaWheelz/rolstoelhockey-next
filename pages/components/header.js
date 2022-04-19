@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from "react";
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 
-export const Header = () => {
+export default function Header () {
     const [loggedIn] = useState();
     // const [collapsed, setCollapsed] = useState(false);
     // const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show d-flex justify-content-end';
