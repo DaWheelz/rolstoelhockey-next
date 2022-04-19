@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Rolstoelhockey app</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />
+        <meta charset="UTF-8" />
       </Head>
     <Layout>
       <Component {...pageProps} />
