@@ -351,6 +351,11 @@ a:hover {
         }
     }
 
+    .login_icon {
+        width: 25px;
+        height:25px;
+    }
+
     .backdrop{
         position: fixed;
         width: 100%;

@@ -38,7 +38,7 @@ export default function Header () {
               </Nav.Item>
               <Nav.Item style={{ margin: 10 }} as="li">
                 <Link href="/login">
-                  <Image src={login_img} width={25} height={25} className="toolbar__logo"/>
+                <img src='img/login_icon.png' alt="" width={25} height={25}></img>
                 </Link>
               </Nav.Item>
             </Nav>
