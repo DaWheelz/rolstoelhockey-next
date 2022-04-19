@@ -18,24 +18,24 @@ export default function Header () {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto" defaultActiveKey="/home">
             </Nav>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
-            <Nav.Item as="li">
-                <Link className="nav-item" href="/clubs">Clubs</Link>
+            <Nav>
+            <Nav.Item style={{ margin: 10 }} as="li">
+                <Link  href="/clubs">Clubs</Link>
               </Nav.Item>
-              <Nav.Item as="li">
-                <Link className="nav-item" href="/match">Uitslagen</Link>
+              <Nav.Item style={{ margin: 10 }} as="li">
+                <Link  href="/match">Uitslagen</Link>
               </Nav.Item>
-              <Nav.Item as="li">
-                <Link className="nav-item" href="/matchbyteam">Zoek wedstrijd</Link>
+              <Nav.Item style={{ margin: 10 }} as="li">
+                <Link  href="/matchbyteam">Zoek wedstrijd</Link>
               </Nav.Item>
-              <Nav.Item as="li">
-                <Link className="nav-item" href="/competition">Competitie overzicht</Link>
+              <Nav.Item style={{ margin: 10 }} as="li">
+                <Link  href="/competition">Competitie overzicht</Link>
               </Nav.Item>
-              <Nav.Item as="li">
-                <Link className="nav-item" href="/contact">Contact</Link>
+              <Nav.Item style={{ margin: 10 }} as="li">
+                <Link href="/contact">Contact</Link>
               </Nav.Item>
-              <Nav.Item as="li">
-                <Link className="nav-item" href="/login">Login</Link>
+              <Nav.Item style={{ margin: 10 }} as="li">
+                <Link href="/login">Login</Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

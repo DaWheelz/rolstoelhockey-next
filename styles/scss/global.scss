@@ -9,4 +9,11 @@ $theme-colors: (
   'dark': #001738,
 );
 
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+
+
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
