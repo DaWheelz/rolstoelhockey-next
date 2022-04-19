@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image'
 import { useState } from "react";
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import login_img from '../../public/img/login_icon.png';
 
 export default function Header () {
     const [loggedIn] = useState();
@@ -12,7 +14,7 @@ export default function Header () {
       <Navbar bg="primary" expand="lg">
         <Container fluid>
             <Link href="/">
-              <img src='img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo"></img>
+              <img src='img/navbar_logo_rolstoelhockeyV2.png' alt="" width={100} height={28} className="toolbar__logo"></img>
             </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -35,7 +37,9 @@ export default function Header () {
                 <Link href="/contact">Contact</Link>
               </Nav.Item>
               <Nav.Item style={{ margin: 10 }} as="li">
-                <Link href="/login">Login</Link>
+                <Link href="/login">
+                  <Image src={login_img} width={25} height={25} className="toolbar__logo"/>
+                </Link>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>
