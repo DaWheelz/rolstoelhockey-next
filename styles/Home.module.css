@@ -114,3 +114,7 @@
     flex-direction: column;
   }
 }
+
+.primary {
+  color: #ef790c;
+}
