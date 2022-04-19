@@ -29,26 +29,26 @@ class Home extends Component {
   };
 
   getMatchesH() {
-    axios.get(`http://localhost:5000/matches/findlatest/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
       console.log(response);
         this.setState({ matchesH: response.data, loading: false });
       })
   }
 
   getMatchesE() {
-    axios.get(`http://localhost:5000/matches/findlatest/E`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/E`).then(response => {
       console.log(response);
       this.setState({ matchesE: response.data, loading: false });
     });
   }
 
   getUpcomingH() {
-    axios.get(`http://localhost:5000/gamedays/upcoming/H`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/gamedays/upcoming/H`).then(response => {
       this.setState({ gamedaysH: response.data, loading: false });
     });
   }
   getUpcomingE() {
-    axios.get(`http://localhost:5000/gamedays/upcoming/E`).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/gamedays/upcoming/E`).then(response => {
       this.setState({ gamedaysE: response.data, loading: false });
     });
   }

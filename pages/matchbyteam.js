@@ -28,13 +28,13 @@ class MatchByTeam extends Component {
   };
 
   getMatches(team) {
-    axios.get(`http://localhost:5000/matches/findmatchByTeam/` + team).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findmatchByTeam/` + team).then(response => {
       this.setState({ matches: response.data });
     });
   }
 
   getTeams() {
-    fetch(`http://localhost:5000/clubs/find/teams/H`).then(response => {
+    fetch(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/H`).then(response => {
         return response.json();
       }).then(data => {
         let teamsFromApi = data.map(team => {
@@ -52,7 +52,7 @@ class MatchByTeam extends Component {
                 }
             ].concat(teamsFromApi)
         });
-        fetch(`http://localhost:5000/clubs/find/teams/E`).then(response => {
+        fetch(`https://rolstoelhockey-backend.herokuapp.com/clubs/find/teams/E`).then(response => {
             return response.json();
           })
             .then(data => {

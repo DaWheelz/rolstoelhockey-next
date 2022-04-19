@@ -28,7 +28,7 @@ class Match extends Component {
 
   getMatches(gamedayid) {
     console.log(gamedayid);
-    axios.get(`http://localhost:5000/matches/find/` + gamedayid).then(response => {
+    axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/find/` + gamedayid).then(response => {
       this.setState({ matches: response.data });
     });
   }
@@ -38,7 +38,7 @@ class Match extends Component {
   }
 
   getGameDays() {
-    fetch("http://localhost:5000/gamedays/get/H").then(response => {
+    fetch("https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H").then(response => {
       return response.json();
     })
       .then(data => {
@@ -59,7 +59,7 @@ class Match extends Component {
             }
           ].concat(gamedaysFromApi)
         });
-        fetch("http://localhost:5000/gamedays/get/E").then(response => {
+        fetch("https://rolstoelhockey-backend.herokuapp.com/gamedays/get/E").then(response => {
       return response.json();
       })
       .then(data => {
