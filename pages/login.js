@@ -59,32 +59,15 @@ export default function Login(req, res) {
             }).then((response) => {
                 
                 if (response.ok) {
+                    setTimeout(() => {
+                        router.push('/');
+                    }, 1000);
                     return response.json()
                 }
                 return response.json().then((error) => {
                     setErrorMessage(error);
                     throw new Error(error.message);
                 });
-            }).then((result) => {
-                const serialisedToken = serialize("JWTToken", result.token, {
-                    httpOnly: true,
-                    secure: process.env.NODE_ENV !== "development",
-                    sameSite: "strict",
-                    maxAge: 60 * 60 * 24 * 30,
-                    path: "/", 
-                });
-                const serialisedRole = serialize("JWTRole", result.role, {
-                    httpOnly: true,
-                    secure: process.env.NODE_ENV !== "development",
-                    sameSite: "strict",
-                    maxAge: 60 * 60 * 24 * 30,
-                    path: "/", 
-                });
-                res.setHeader('Set-Cookie', serialisedToken);
-                res.setHeader('Set-Cookie', serialisedRole);
-                setTimeout(() => {
-                    router.push('/');
-                }, 1000);
             }).catch((error) => {
                 setTimeout(() => {
                     setErrorMessage(error.message);
