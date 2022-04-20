@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+const router = useRouter();
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +20,6 @@ class Login extends Component {
 
     Login(e) {
         const LOGIN_URL = "https://rolstoelhockey-backend.herokuapp.com/auth/login/";
-        const router = useRouter()
         e.preventDefault();
         this.setState({ errorMessage: '' })
         if (this.validUser()) {
