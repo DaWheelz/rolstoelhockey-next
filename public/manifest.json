@@ -1,0 +1,32 @@
+{
+    "theme_color": "#ff7d00",
+    "background_color": "#ff7d00",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Rolstoelhockey",
+    "short_name": "Rolstoelhockey",
+    "description": "Alle uitslagen en standen van de Rolstoelhockey competities in een overzicht!",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
