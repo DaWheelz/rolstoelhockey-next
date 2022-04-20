@@ -17,7 +17,6 @@ class Login extends Component {
 
     Login(e) {
         const LOGIN_URL = "https://rolstoelhockey-backend.herokuapp.com/auth/login/";
-        //const LOGIN_URL = "//hockey.mutsaers.nu:3000/auth/login/";
         e.preventDefault();
         this.setState({ errorMessage: '' })
         if (this.validUser()) {
@@ -39,12 +38,10 @@ class Login extends Component {
                     return response.json()
                 }
                 return response.json().then((error) => {
-                    console.log(error.message);
                     this.setState({ errorMessage: error })
                     throw new Error(error.message);
                 });
             }).then((result) => {
-                console.log('res: ', result)
                 sessionStorage.setItem('token', result.token)
                 sessionStorage.setItem('role', result.role)
                 setTimeout(() => {
@@ -91,18 +88,19 @@ class Login extends Component {
 
             password: Joi.string().min(5).required(),
         });
+        console.log('before validate')
+        const result = schema.validate(this.state.user);
 
-        const result = Joi.validate(this.state.user, schema);
-
-        if (result.error === null) {
+        if (!result.error) {
+            console.log('validated')
             this.setState({ loggedIn: true });
             return true;
         }
-        if (result.error.message.includes('username')) {
-            this.setState({ errorMessage: 'Username is invalid.' })
-        } else {
-            this.setState({ errorMessage: 'Password is invalid.' })
-        }
+        // if (result.error.message.includes('username')) {
+        //     this.setState({ errorMessage: 'Username is invalid.' })
+        // } else {
+        //     this.setState({ errorMessage: 'Password is invalid.' })
+        // }
 
         return false;
     }
@@ -112,11 +110,6 @@ class Login extends Component {
             <div className="pageblock">
                 <div className="jumbotron">
                     <h1 className="display-3">Login</h1>
-                    {this.state.loggingIn ?
-                        <div>
-                            <img src={LoadingSVG} alt="" />
-                        </div>
-                        : null}
                     {this.state.errorMessage ? <div className="alert alert-danger" role="alert">
                         {this.state.errorMessage}
                     </div> : null}
