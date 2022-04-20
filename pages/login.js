@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 class Login extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class Login extends Component {
 
     Login(e) {
         const LOGIN_URL = "https://rolstoelhockey-backend.herokuapp.com/auth/login/";
+        const router = useRouter()
         e.preventDefault();
         this.setState({ errorMessage: '' })
         if (this.validUser()) {
@@ -45,10 +47,8 @@ class Login extends Component {
                 sessionStorage.setItem('token', result.token)
                 sessionStorage.setItem('role', result.role)
                 setTimeout(() => {
-                    console.log('logged in...')
                     this.setState({ loggingIn: true });
-                    this.props.history.push('/');
-                    window.location.reload(true);
+                    router.push('/');
                 }, 1000);
             }).catch((error) => {
                 setTimeout(() => {
