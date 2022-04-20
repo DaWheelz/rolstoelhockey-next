@@ -1,8 +1,12 @@
 import React, { Component, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { sign } from 'jsonwebtoken';
+import { serialize } from 'cookie';
 
-export default function Login() {
+const secret = process.env.TOKEN_SECRET;
+
+export default function Login(req, res) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [user, setUser] = useState([username, password]);
@@ -10,6 +14,7 @@ export default function Login() {
     const [loggedIn, setLoggedIn] = useState(false);
 
     const router = useRouter();
+
 
     const validUser = () => {
         const Joi = require('joi');
@@ -61,8 +66,22 @@ export default function Login() {
                     throw new Error(error.message);
                 });
             }).then((result) => {
-                sessionStorage.setItem('token', result.token)
-                sessionStorage.setItem('role', result.role)
+                const serialisedToken = serialize("JWTToken", result.token, {
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV !== "development",
+                    sameSite: "strict",
+                    maxAge: 60 * 60 * 24 * 30,
+                    path: "/", 
+                });
+                const serialisedRole = serialize("JWTRole", result.role, {
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV !== "development",
+                    sameSite: "strict",
+                    maxAge: 60 * 60 * 24 * 30,
+                    path: "/", 
+                });
+                res.setHeader('Set-Cookie', serialisedToken);
+                res.setHeader('Set-Cookie', serialisedRole);
                 setTimeout(() => {
                     router.push('/');
                 }, 1000);
