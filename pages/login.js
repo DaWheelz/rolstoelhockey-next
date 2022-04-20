@@ -1,32 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const router = useRouter();
+export default function Login() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [user, setUser] = useState([username, password]);
+    const [errormessage, setErrorMessage] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false);
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: {
-                username: '',
-                password: '',
-            },
-            errorMessage: '',
-            loggingIn: false,
-            token: '',
+    const router = useRouter();
+
+    const validUser = () => {
+        const Joi = require('joi');
+
+        const schema = Joi.object({
+            username: Joi.string()
+                .regex(/(^[a-zA-Z0-9_]*$)/)
+                .min(2)
+                .max(30)
+                .required(),
+
+            password: Joi.string().min(5).required(),
+        });
+        const user = {
+            username: username,
+            password: password
         }
+        const result = schema.validate(user);
+
+        if (!result.error) {
+            setLoggedIn(true);
+            return true;
+        }
+        return false;
     }
 
-    Login(e) {
+    const handleSubmit = async (e) => {
         const LOGIN_URL = "https://rolstoelhockey-backend.herokuapp.com/auth/login/";
         e.preventDefault();
-        this.setState({ errorMessage: '' })
-        if (this.validUser()) {
-            this.setState({ loggingIn: true });
+        if (validUser()) {
             const body = {
-                username: this.state.user.username,
-                password: this.state.user.password
+                username: username,
+                password: password
             }
             fetch(LOGIN_URL, {
                 method: 'POST',
@@ -41,125 +57,71 @@ class Login extends Component {
                     return response.json()
                 }
                 return response.json().then((error) => {
-                    this.setState({ errorMessage: error })
+                    setErrorMessage(error);
                     throw new Error(error.message);
                 });
             }).then((result) => {
                 sessionStorage.setItem('token', result.token)
                 sessionStorage.setItem('role', result.role)
                 setTimeout(() => {
-                    this.setState({ loggingIn: true });
                     router.push('/');
                 }, 1000);
             }).catch((error) => {
                 setTimeout(() => {
-                    this.setState({ loggingIn: false });
-                    this.setState({ errorMessage: error.message });
+                    setErrorMessage(error.message);
                 }, 1000);
             });
-        }
-    }
+        } 
+    };
 
-    onChangeUsername(e) {
-        this.setState({
-            user: {
-                username: e.target.value,
-                password: this.state.user.password,
-            }
-        });
-    }
-    onChangePassword(e) {
-        this.setState({
-            user: {
-                username: this.state.user.username,
-                password: e.target.value,
-            }
-        });
-    }
-
-    validUser() {
-        const Joi = require('joi');
-
-        const schema = Joi.object({
-            username: Joi.string()
-                .regex(/(^[a-zA-Z0-9_]*$)/)
-                .min(2)
-                .max(30)
-                .required(),
-
-            password: Joi.string().min(5).required(),
-        });
-        console.log('before validate')
-        const result = schema.validate(this.state.user);
-
-        if (!result.error) {
-            console.log('validated')
-            this.setState({ loggedIn: true });
-            return true;
-        }
-        // if (result.error.message.includes('username')) {
-        //     this.setState({ errorMessage: 'Username is invalid.' })
-        // } else {
-        //     this.setState({ errorMessage: 'Password is invalid.' })
-        // }
-
-        return false;
-    }
-
-    render() {
-        return (
-            <div className="pageblock">
-                <div className="jumbotron">
-                    <h1 className="display-3">Login</h1>
-                    {this.state.errorMessage ? <div className="alert alert-danger" role="alert">
-                        {this.state.errorMessage}
-                    </div> : null}
-                    {!this.state.loggingIn ?
-                        <form onSubmit={e => this.Login(e)}>
-                            <div className="form-group">
-                                <label htmlFor="username">Gebruikersnaam</label>
-                                <input
-                                    onChange={this.onChangeUsername.bind(this)}
-                                    type="text"
-                                    className="form-control"
-                                    id="username"
-                                    aria-describedby="usernameHelp"
-                                    placeholder="Voer gebruikersnaam in"
-                                    required />
-                                <h5 id="usernameHelp" className="form-text text-muted">
-                                    Voer je gebruikersnaam in om in te loggen.
-                             </h5>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="password">Wachtwoord</label>
-                                <input
-                                    onChange={this.onChangePassword.bind(this)}
-                                    type="password"
-                                    className="form-control"
-                                    id="password"
-                                    aria-describedby="passwordHelp"
-                                    placeholder="Wachtwoord"
-                                    autoComplete={false}
-                                    required />
-                                <h5 id="passwordHelp" className="form-text text-muted">
-                                    Voer je wachtwoord in om in te loggen.
-                             </h5>
-                                <br />
-                                <div className="form-group">
-                                    <button type="submit" className="btn btn-primary">Login</button>
-                                </div>
-                                <label>Nog geen account?
-                                <Link href="/signup">
-                                    <button type="button" className="btn btn-default btn-xs" style={{ margin: '0px', paddingTop: '2px', color: '#ef790c' }}>Registreer</button>
-                                </Link>
-                                </label>
-                            </div>
-                        </form>
-                        : null}
-                </div>
-            </div >
-        )
-    }
-}
-
-export default Login;
+    return (
+        <div className="pageblock">
+            <div className="jumbotron">
+                <h1 className="display-3">Login</h1>
+                {errormessage ? <div className="alert alert-danger" role="alert">
+                    {errormessage}
+                </div> : null}
+                <form onSubmit={e => handleSubmit(e)}>
+                    <div className="form-group">
+                        <label htmlFor="username">Gebruikersnaam</label>
+                        <input
+                            onChange={(e) => setUsername(e.target.value)}
+                            type="text"
+                            className="form-control"
+                            id="username"
+                            aria-describedby="usernameHelp"
+                            placeholder="Voer gebruikersnaam in"
+                            required />
+                        <h5 id="usernameHelp" className="form-text text-muted">
+                            Voer je gebruikersnaam in om in te loggen.
+                        </h5>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Wachtwoord</label>
+                        <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            aria-describedby="passwordHelp"
+                            placeholder="Wachtwoord"
+                            autoComplete={false}
+                            required />
+                        <h5 id="passwordHelp" className="form-text text-muted">
+                            Voer je wachtwoord in om in te loggen.
+                        </h5>
+                        <br />
+                        <div className="form-group">
+                            <button type="submit" className="btn btn-primary">Login</button>
+                        </div>
+                        <label>Nog geen account?
+                        <Link href="/signup">
+                            <button type="button" className="btn btn-default btn-xs" style={{ margin: '0px', paddingTop: '2px', color: '#ef790c' }}>Registreer</button>
+                        </Link>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div >
+    )
+};

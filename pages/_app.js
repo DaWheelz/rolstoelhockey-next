@@ -5,7 +5,7 @@ import '../styles/scss/global.scss'
 import React from 'react';
 import Script from 'next/script'
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -30,6 +30,4 @@ function MyApp({ Component, pageProps }) {
     </Layout>
     </div>
   )
-}
-
-export default MyApp
+};
