@@ -9,10 +9,11 @@ export default function middleware(req) {
     const jwt = require('@tsndr/cloudflare-worker-jwt')
     const { cookies } = req;
 
-    const token = cookies.serialisedToken;
+    const token = cookies.JWTToken;
     const url = req.url;
 
     if(url.includes("/login")){
+      console.log('check login auth')
         if(token){
           try {
             jwt.verify(token, secret);
@@ -24,6 +25,7 @@ export default function middleware(req) {
   }
 
   if(url.includes("/addmatch")){
+    console.log('check token')
     if(token){
       try {
         jwt.verify(token, secret);
