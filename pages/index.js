@@ -91,61 +91,61 @@ class Home extends Component {
       }
     );
 
-    const eventItemsH = this.state.gamedaysH.map((day, id) => {
-      let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
-      let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
-      let address = ""
-      let city = ""
+    // const eventItemsH = this.state.gamedaysH.map((day, id) => {
+    //   let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
+    //   let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
+    //   let address = ""
+    //   let city = ""
 
-      if (day.address === null || day.address === "") {
-        address = "Unknown"
-        city = "Unknown"
-      }
-      else {
-        address = day.address
-        city = day.city
-      }
+    //   if (day.address === null || day.address === "") {
+    //     address = "Unknown"
+    //     city = "Unknown"
+    //   }
+    //   else {
+    //     address = day.address
+    //     city = day.city
+    //   }
 
-      return (
-          <div key={day._id} className="event">
-            <div className="event-mid">
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
-              <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
-              <a className='button' href={locationurl}>Navigeer</a>
-            </div>
-          </div>
-      );
-    });
+    //   return (
+    //       <div key={day._id} className="event">
+    //         <div className="event-mid">
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
+    //           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
+    //           <a className='button' href={locationurl}>Navigeer</a>
+    //         </div>
+    //       </div>
+    //   );
+    // });
 
-    const eventItemsE = this.state.gamedaysE.map((day, id) => {
-      let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
-      let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
-      let address = ""
-      let city = ""
+    // const eventItemsE = this.state.gamedaysE.map((day, id) => {
+    //   let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
+    //   let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
+    //   let address = ""
+    //   let city = ""
 
-      if (day.address === null || day.address === "") {
-        address = "Unknown"
-        city = "Unknown"
-      }
-      else {
-        address = day.address
-        city = day.city
-      }
+    //   if (day.address === null || day.address === "") {
+    //     address = "Unknown"
+    //     city = "Unknown"
+    //   }
+    //   else {
+    //     address = day.address
+    //     city = day.city
+    //   }
 
-      return (
-          <div key={day._id} className="event">
-            <div className="event-mid">
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
-              <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
-              <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
-              <a className='button' href={locationurl}>Navigeer</a>
-            </div>
-          </div>
-      );
-    });
+    //   return (
+    //       <div key={day._id} className="event">
+    //         <div className="event-mid">
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: title_event_color, fontWeight: '400' }}>{day.title}</b></div>
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
+    //           <div style={{ width: '100%', margin: '5px' }}><b style={{ color: textColor, fontWeight: '300' }}>Adres: </b><br />{address}</div>
+    //           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ color: textColor, fontWeight: '300' }}>Stad: </b><br />{city}</div>
+    //           <a className='button' href={locationurl}>Navigeer</a>
+    //         </div>
+    //       </div>
+    //   );
+    // });
 
     return (
       <div className="pageblock">
@@ -170,7 +170,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="home-div1">
-        <div className="home-events">
+        {/* <div className="home-events">
             <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - H</h1>
             {this.state.loading && (
                   <div>
@@ -188,7 +188,7 @@ class Home extends Component {
            )}
               {eventItemsE}
           </div>
-        </div>
+        </div> */}
         <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
       </div>
     )
