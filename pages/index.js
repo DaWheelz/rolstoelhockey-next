@@ -31,8 +31,8 @@ class Home extends Component {
 
   getMatchesH() {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
+        console.log(response);
         this.setState({ matchesH: response.data, loading: false });
-        console.log(this.state.matchesH);
       })
   }
 
