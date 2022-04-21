@@ -55,7 +55,7 @@ export default function Login(req, res) {
                     'Content-Type': 'application/json',
                     Accept: 'application/json',
                 },
-                credentials: 'same-origin',
+                credentials: 'include',
                 body: JSON.stringify(body)
             }).then((response) => {
                 
