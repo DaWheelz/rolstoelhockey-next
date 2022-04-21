@@ -53,7 +53,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log("matchesH: " + JSON.stringify(this.state.matchesH) + " matchesE: " + JSON.stringify(this.state.matchesE) + " gamedaysH: " + JSON.stringify(this.state.gamedaysH) + " gamedaysE: " + JSON.stringify(this.state.gamedaysE);
     const matchItemsH = this.state.matchesH.map((match, _id) => {
       let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
