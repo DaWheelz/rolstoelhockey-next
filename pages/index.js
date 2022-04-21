@@ -169,8 +169,8 @@ class Home extends Component {
             {matchItemsE}
           </div>
         </div>
-        <div className="home-div1">
-        {/* <div className="home-events">
+        {/* <div className="home-div1">
+        <div className="home-events">
             <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - H</h1>
             {this.state.loading && (
                   <div>
