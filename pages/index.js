@@ -1,4 +1,4 @@
-import React, { Component, View} from 'react';
+import React, { Component, View, useState} from 'react';
 import axios from "axios";
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import GoogleAd from '../pages/GoogleAd';
@@ -21,6 +21,7 @@ class Home extends Component {
     };
   }
 
+
   UNSAFE_componentWillMount() {
     this.getMatchesH();
     this.getMatchesE();
@@ -31,6 +32,7 @@ class Home extends Component {
   getMatchesH() {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H`).then(response => {
         this.setState({ matchesH: response.data, loading: false });
+        console.log(this.state.matchesH);
       })
   }
 
