@@ -17,6 +17,13 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <div>
+      <Script
+            id="Adsense-id"
+            data-ad-client="ca-pub-3103181417222460"
+            async="true"
+            strategy="beforeInteractive"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
       <Head>
         <title>Rolstoelhockey app</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />
@@ -24,13 +31,6 @@ export default function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
         <meta name='theme-color' content="#ff7d00"/>
-        <Script
-            id="Adsense-id"
-            data-ad-client="ca-pub-3103181417222460"
-            async="true"
-            strategy="beforeInteractive"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
       </Head>
     <Layout>
       <Component {...pageProps} />
