@@ -6,9 +6,6 @@ import login_img from '../../public/img/login_icon.png';
 
 export default function Header () {
     const [loggedIn] = useState();
-    // const [collapsed, setCollapsed] = useState(false);
-    // const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show d-flex justify-content-end';
-    // const classTwo = collapsed ? 'navbar-toggler navbar-toggler-right collapsed ' : 'navbar-toggler navbar-toggler-right ';
 
     return (
       <Navbar bg="primary" expand="lg">
