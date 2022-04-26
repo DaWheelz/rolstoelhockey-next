@@ -3,7 +3,7 @@ import axios from 'axios';
 
 var textColor = "#1f1f1f";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const resClubsH = await fetch('https://rolstoelhockey-backend.herokuapp.com/clubs/H')
     const clubsH = await resClubsH.json()
 

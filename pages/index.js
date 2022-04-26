@@ -7,7 +7,7 @@ import GlobalStyle from './components/styled_components';
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const resMatchesH = await fetch('https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H')
   const matchesH = await resMatchesH.json()
 
