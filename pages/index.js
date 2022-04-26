@@ -36,11 +36,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
            <div className="home-matches">
              <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - H</h1>
              {matchesH.map((match) => {
+              let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
               return (
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date">{match.gamedate}</div>
+                    <div className="match-date">{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
                   <div className="match-score">{match.scoreA}</div>
@@ -54,11 +55,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <div className="home-matches">
             <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - E</h1>
             {matchesE.map((match) => {
+              let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
               return (
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date">{match.gamedate}</div>
+                    <div className="match-date">{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
                   <div className="match-score">{match.scoreA}</div>
