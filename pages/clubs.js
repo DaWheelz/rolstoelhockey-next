@@ -21,11 +21,6 @@ export async function getStaticProps() {
 function Club ({clubsH, clubsE}){
     return (
         <div style={{ margin: '10px', border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)'}}>
-            {/* border: 1px solid #dadada;
-            padding: 20px;
-            background-color: white;
-            border-radius: .1875rem;
-            box-shadow: 0 1px 15px 1px rgba(39,39,39,.1); */}
              <div className='pageblock'>
             <h4 style={{ color: textColor, fontWeight: '600' }}>Clubs - H-hockey</h4>
                      <div className="clubheader">
