@@ -1,3 +1,6 @@
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 html,
 body {
   padding: 0;
@@ -19,12 +22,6 @@ li {
 
 .gridstyle {
   margin-top: 4rem;
-}
-
-.match-title {
-    font-weight: 600;
-    font-size: 26px;
-    margin: 7px;
 }
 
 .blockstyle {
@@ -819,3 +816,6 @@ a:hover {
         font-weight: 100;
     }
 }
+`;
+
+export default GlobalStyle;

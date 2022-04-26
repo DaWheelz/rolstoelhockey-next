@@ -3,12 +3,14 @@ import Image from 'next/image'
 import { useState } from "react";
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 import login_img from '../../public/img/login_icon.png';
+import GlobalStyle from './styled_components';
 
 export default function Header () {
     const [loggedIn] = useState();
 
     return (
       <Navbar bg="primary" expand="lg">
+        <GlobalStyle />
         <Container fluid>
             <Link href="/">
               <img src='img/navbar_logo_rolstoelhockeyV2.png' alt="" width={100} height={28} className="toolbar__logo"></img>

@@ -2,6 +2,7 @@ import React, { Component, View, useState} from 'react';
 import axios from "axios";
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import GoogleAd from '../pages/GoogleAd';
+import GlobalStyle from './components/styled_components';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -32,9 +33,10 @@ export async function getServerSideProps() {
 function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
   return (
     <div className="pageblock">
+      <GlobalStyle />
          <div className="home-div1">
            <div className="home-matches">
-             <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - H</h1>
+             <div className='match-title'>Laatste uitslagen - H</div>
              {matchesH.map((match) => {
               let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
               return (
@@ -53,7 +55,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
               })}
           </div>
           <div className="home-matches">
-            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Laatste uitslagen - E</h1>
+            <div className='match-title'>Laatste uitslagen - E</div>
             {matchesE.map((match) => {
               let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
               return (
@@ -74,7 +76,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
         </div>
         <div className="home-div1">
         <div className="home-events">
-            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - H</h1>
+              <div className='match-title'>Competitedagen - H</div>
               {gamedaysH.map((day) => {
                 let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
                       let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
@@ -103,7 +105,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 })}
           </div>
           <div className="home-events">
-            <h1 style={{ fontWeight: '600', fontSize: 26, margin: 7}}>Competitedagen - E</h1>
+            <div className='match-title'>Competitedagen - E</div>
             {gamedaysE.map((day) => {
                 let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
                       let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
