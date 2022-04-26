@@ -26,8 +26,9 @@ export async function getStaticProps() {
       matchesE,
       gamedaysH,
       gamedaysE
-    }
-  } 
+    },
+    revalidate: 60
+  }
 }
 
 function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
