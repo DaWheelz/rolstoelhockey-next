@@ -6,7 +6,7 @@ import GoogleAd from '../pages/GoogleAd';
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const resMatchesH = await fetch('https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/H')
   const matchesH = await resMatchesH.json()
 
@@ -25,8 +25,7 @@ export async function getStaticProps() {
       matchesE,
       gamedaysH,
       gamedaysE
-    },
-    revalidate:  60
+    }
   } 
 }
 
