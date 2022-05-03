@@ -26,9 +26,18 @@ export default function MyApp({ Component, pageProps }) {
           />
           <Script
             id="Google-Analytics"
-            async="true"
+            strategy="afterInteractive"
             src="https://www.googletagmanager.com/gtag/js?id=G-7388CCFNX6"
           />
+          <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7388CCFNX6');
+        `}
+      </Script>
       <Head>
         <title>Rolstoelhockey app</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />
