@@ -17,13 +17,13 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      {/* <Script
+      <Script
             id="Adsense-id"
             data-ad-client="ca-pub-3103181417222460"
             async="true"
             strategy="beforeInteractive"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          /> */}
+          />
           <Script
             id="Google-Analytics"
             strategy="afterInteractive"
