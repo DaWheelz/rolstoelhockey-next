@@ -1,7 +1,6 @@
 import React, { Component, View, useState} from 'react';
 import axios from "axios";
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
-import GoogleAd from '../pages/GoogleAd';
 import GlobalStyle from './components/styled_components';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -9,6 +8,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import CookieConsent from "react-cookie-consent";
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -187,7 +187,10 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                 })}
           </TabPanel>
-        <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+        {/* <GoogleAd /> */}
+        <CookieConsent location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
+          Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
+        </CookieConsent>
         </Box>
   )
 }

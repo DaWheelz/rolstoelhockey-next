@@ -1,4 +1,4 @@
-import Document from 'next/document'
+import Document, {Html, Head, Main , NextScript} from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -27,4 +27,38 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+           {/* Google Adsense */}
+           <script data-ad-client="ca-pub-3103181417222460" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    
+                    {/* Global Site Tag (gtag.js) - Google Analytics */}
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=G-7388CCFNX6`}
+                    />
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7388CCFNX6', {
+              page_path: window.location.pathname,
+            });
+          `,
+                        }}
+                    />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+
 }

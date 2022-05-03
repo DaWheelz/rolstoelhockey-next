@@ -17,27 +17,6 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <Script
-            id="Adsense-id"
-            data-ad-client="ca-pub-3103181417222460"
-            async="true"
-            strategy="beforeInteractive"
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
-          <Script
-            id="Google-Analytics"
-            strategy="afterInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=G-7388CCFNX6"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-7388CCFNX6');
-        `}
-      </Script>
       <Head>
         <title>Uitslagen en standen | Rolstoelhockey App</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />
