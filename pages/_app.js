@@ -24,6 +24,11 @@ export default function MyApp({ Component, pageProps }) {
             strategy="beforeInteractive"
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           />
+          <Script
+            id="Google-Analytics"
+            async="true"
+            src="https://www.googletagmanager.com/gtag/js?id=G-7388CCFNX6"
+          />
       <Head>
         <title>Rolstoelhockey app</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />
