@@ -3,6 +3,12 @@ import axios from "axios";
 import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import GoogleAd from '../pages/GoogleAd';
 import GlobalStyle from './components/styled_components';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -31,12 +37,61 @@ export async function getStaticProps() {
   }
 }
 
-function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
   return (
-    <div className="pageblock">
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Container>
+          <Box>
+            {children}
+          </Box>
+        </Container>
+        
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box>
       <GlobalStyle />
-         <div className="home-div1">
-           <div className="home-matches">
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons allowScrollButtonsMobile aria-label="scrollable auto tabs example">
+              <Tab label="Uitslagen - H" {...a11yProps(0)} />
+              <Tab label="Uitslagen - E" {...a11yProps(1)} />
+              <Tab label="Competitiedagen - H" {...a11yProps(2)} />
+              <Tab label="Competitiedagen - E" {...a11yProps(3)} />
+            </Tabs>
+          </Box>
+          <TabPanel value={value} index={0}>
              <div className='match-title'>Laatste uitslagen - H</div>
              {matchesH.map((match) => {
               let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
@@ -54,8 +109,8 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 </div>
               )
               })}
-          </div>
-          <div className="home-matches">
+          </TabPanel>
+          <TabPanel value={value} index={1}>
             <div className='match-title'>Laatste uitslagen - E</div>
             {matchesE.map((match) => {
               let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
@@ -73,10 +128,8 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 </div>
               )
               })}
-          </div>
-        </div>
-        <div className="home-div1">
-        <div className="home-events">
+          </TabPanel>
+          <TabPanel value={value} index={2}>
               <div className='match-title'>Competitedagen - H</div>
               {gamedaysH.map((day) => {
                 let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
@@ -104,8 +157,8 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       </div>
                       )
                 })}
-          </div>
-          <div className="home-events">
+          </TabPanel>
+          <TabPanel value={value} index={3}>
             <div className='match-title'>Competitedagen - E</div>
             {gamedaysE.map((day) => {
                 let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
@@ -133,10 +186,9 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       </div>
                       )
                 })}
-          </div>
-        </div>
+          </TabPanel>
         <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-      </div>
+        </Box>
   )
 }
 

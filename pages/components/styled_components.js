@@ -24,6 +24,12 @@ li {
   margin-top: 4rem;
 }
 
+.match-title {
+    font-weight: 600;
+    font-size: 26px;
+    margin-top: 20px;
+}
+
 .blockstyle {
   width: 100%;
   min-height: 500px;
@@ -41,18 +47,14 @@ color: #ef790c
 }
 
 .home-matches{
-  margin: 10px;
   border: 1px solid #dadada;
-  padding: 20px;
   background-color: white;
   border-radius: .1875rem;
   box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
 }
 
 .home-events{
-  margin: 10px;
   border: 1px solid #dadada;
-  padding: 20px;
   background-color: white;
   border-radius: .1875rem;
   box-shadow: 0 1px 15px 1px rgba(39,39,39,.1);
