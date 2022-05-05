@@ -186,7 +186,7 @@ const readGamedayExcel = (file) => {
             </thead>
             <tbody>
             {matches.map((d) => (
-                <tr key={d._id}>
+                <tr key={d.gamedayid}>
                 <th>{d.teamA}</th>
                 <td>{d.teamB}</td>
                 <td>{d.played_at}</td>
