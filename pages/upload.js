@@ -64,7 +64,7 @@ function Upload(){
         }}
       />
 
-      <table class="table container">
+      <table className="table container">
         <thead>
           <tr>
             <th scope="col">Title</th>
