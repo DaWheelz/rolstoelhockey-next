@@ -10,7 +10,7 @@ const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
 const [fileData, setFileData ] = useState();
 
-const fields = ['title', '_id'];
+const fields = ['title', '_id', 'competitionid'];
 
 const readGamedayExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -117,9 +117,8 @@ const readGamedayExcel = (file) => {
     }
 
     const Export = async () => {
-        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
+        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get')
         const data = await response.json()
-        console.log(data);
 
         return Promise.resolve(data);
     }
@@ -203,7 +202,7 @@ const readGamedayExcel = (file) => {
         <div>
             <CsvDownloader datas={Export} columns={fields} filename="myfile"
         extension=".csv"
-        separator=";"
+        separator=","
         wrapColumnChar="'" 
         text="DOWNLOAD" ></CsvDownloader>
         </div>
