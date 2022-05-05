@@ -5,17 +5,25 @@ import { CSVLink } from "react-csv";
 
 const { Parser } = require('json2csv');
 
-  function Upload(){
-    const [gamedays, setGameDay] = useState([]);
-    const [matches, setMatches] = useState([]);
-    const [filedownloadlink, setFiledownloadlink] = useState("");
+function Upload(){
+const [gamedays, setGameDay] = useState([]);
+const [matches, setMatches] = useState([]);
+const [fileData, setFileData ] = useState();
+const fileHeaders = useState([
+    {label: 'ID', key: '_id'},
+    {label: 'Title', key: 'title'}
+  ]);
 
-  const readGamedayExcel = (file) => {
+useEffect(()=>{
+    handleDataFetch();
+  }, [])
+
+const readGamedayExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsArrayBuffer(file);
+    const fileReader = new FileReader();
+    fileReader.readAsArrayBuffer(file);
 
-      fileReader.onload = (e) => {
+    fileReader.onload = (e) => {
         const bufferArray = e.target.result;
 
         const wb = XLSX.read(bufferArray, { type: "buffer", cellDates: true });
@@ -26,17 +34,17 @@ const { Parser } = require('json2csv');
 
         const data = XLSX.utils.sheet_to_json(ws, {raw: false});
         resolve(data);
-      };
+    };
 
-      fileReader.onerror = (error) => {
+    fileReader.onerror = (error) => {
         reject(error);
-      };
+    };
     });
 
     promise.then((d) => {
-      setGameDay(d);
+        setGameDay(d);
     });
-  };
+};
 
   const readMatchExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -90,6 +98,8 @@ const { Parser } = require('json2csv');
          } 
     }
 
+    
+
     const uploadMatches = async () => {
         try {
             const data = await Promise.all(
@@ -114,20 +124,11 @@ const { Parser } = require('json2csv');
              } 
     }
 
-    const Export = async () => {
-        const fields = ['title', '_id'];
-        const json2csvParser = new Parser({fields});
-        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
-        const data = await response.json()
-        const csv = json2csvParser.parse(data);
-
-        const csvReport = {
-            filename: 'gamedays_export.csv',
-            headers: fields,
-            data: csv
-        };
-
-    }
+    const handleDataFetch = async() => {
+        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H');
+        const respJSON = await response.json();
+        setFileData(respJSON)
+      };
 
   return (
     <div style={{display:'flex'}}>
@@ -206,7 +207,7 @@ const { Parser } = require('json2csv');
         <button onClick={() => uploadMatches()}>Upload wedstrijden</button>
         </div>
         <div>
-            <CSVLink {...csvReport}>Export wedstrijddagen</CSVLink>
+            <CSVLink headers={fileHeaders} data={fileData} filename="results.csv" target="_blank">Export wedstrijddagen</CSVLink>
         </div>
     </div>
   );
