@@ -203,7 +203,7 @@ const readGamedayExcel = (file) => {
             <CsvDownloader datas={Export} columns={fields} filename="myfile"
         extension=".csv"
         separator=","
-        wrapColumnChar="'" 
+        noHeader={true}
         text="DOWNLOAD" ></CsvDownloader>
         </div>
     </div>
