@@ -10,7 +10,7 @@ const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
 const [fileData, setFileData ] = useState();
 
-const fields = ['title', '_id', 'competitionid'];
+const fields = ['title', '_id', 'competitionid', 'gamedate'];
 
 const readGamedayExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
