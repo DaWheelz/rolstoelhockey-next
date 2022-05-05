@@ -7,6 +7,7 @@ const { Parser } = require('json2csv');
   function Upload(){
     const [gamedays, setGameDay] = useState([]);
     const [matches, setMatches] = useState([]);
+    const [filedownloadlink, setFiledownloadlink] = useState("");
 
   const readGamedayExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -113,13 +114,17 @@ const { Parser } = require('json2csv');
     }
 
     const Export = async () => {
-        const json2csvParser = new Parser();
+        const fields = ['title', '_id'];
+        const json2csvParser = new Parser({fields});
         const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
         const data = await response.json()
-
         const csv = json2csvParser.parse(data);
 
-        console.log(csv);
+        const myURL = window.URL || window.webkitURL
+
+        var blob = new Blob([csv], { type: 'text/csv' });
+        var csvUrl = myURL.createObjectURL(blob);
+        setFiledownloadlink(csvUrl);
     }
 
   return (
@@ -199,7 +204,7 @@ const { Parser } = require('json2csv');
         <button onClick={() => uploadMatches()}>Upload wedstrijden</button>
         </div>
         <div>
-            <button onClick={() => Export()}>Export Wedstrijd dagen met ID</button>
+            <button onClick={() => Export()} href={filedownloadlink}>Export Wedstrijd dagen met ID</button>
         </div>
     </div>
   );
