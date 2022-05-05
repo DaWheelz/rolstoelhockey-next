@@ -3,7 +3,7 @@ import * as XLSX from "xlsx";
 
 function Upload(){
     const [items, setItems] = useState([]);
-    const [gameday, setGameDay] = useState([]);
+    const [gamedays, setGameDay] = useState([]);
 
   const readExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -18,10 +18,8 @@ function Upload(){
         const wsname = wb.SheetNames[0];
 
         const ws = wb.Sheets[wsname];
-        console.log(ws);
 
         const data = XLSX.utils.sheet_to_json(ws, {raw: false});
-        console.log(data);
         resolve(data);
       };
 
@@ -31,21 +29,35 @@ function Upload(){
     });
 
     promise.then((d) => {
-      setGameDay(...gameday, d);
+        console.log("excel data: ", d);
+      setGameDay(d);
     });
   };
 
   const uploadData = async () => {
     try {
-        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/add', {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json'
-           },
-           body: JSON.stringify({gameday})
-         });
+        const data = await Promise.all(
+            gamedays.map(async (gameday) => {
+                const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/add', {
+                     method: 'POST',
+                     headers: {
+                       'Content-Type': 'application/json'
+                       },
+                       body: JSON.stringify({title: gameday.title, gamedate: gameday.gamedate, gamedayid: gameday.gamedayid, city: gameday.city, address: gameday.address, competitionid: gameday.competitionid})
+                     });
 
-       const data = await response.json();
+                     return await response.json();
+            })
+        )
+
+        // const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/add', {
+        //  method: 'POST',
+        //  headers: {
+        //    'Content-Type': 'application/json'
+        //    },
+        //    body: JSON.stringify({gameday})
+        //  });
+
       // enter you logic when the fetch is successful
          console.log(data);
        } catch(error) {
@@ -77,7 +89,7 @@ function Upload(){
           </tr>
         </thead>
         <tbody>
-          {gameday.map((d) => (
+          {gamedays.map((d) => (
             <tr key={d.gamedayid}>
               <th>{d.title}</th>
               <td>{d.gamedate}</td>
