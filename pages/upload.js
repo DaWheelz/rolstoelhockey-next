@@ -37,6 +37,8 @@ function Upload(){
 
   const uploadData = async () => {
     try {
+        const gamedaybody = JSON.stringify(gameday);
+        console.log("request body", gamedaybody);
         const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/add', {
          method: 'POST',
          headers: {
