@@ -8,7 +8,6 @@ const { Parser } = require('json2csv');
 function Upload(){
 const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
-const [fileData, setFileData ] = useState();
 
 const fields = ['title', '_id', 'competitionid', 'gamedate'];
 
@@ -175,22 +174,21 @@ const readGamedayExcel = (file) => {
         <table className="table container">
             <thead>
             <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Date</th>
-                <th scope="col">Id</th>
-                <th scope="col">City</th>
-                <th scope="col">Address</th>
+                <th scope="col">ID</th>
+                <th scope="col">Team A</th>
+                <th scope="col">Team B</th>
+                <th scope="col">Played At</th>
+                <th scope="col">Gameday ID</th>
                 <th scope="col">CompetitionId</th>
             </tr>
             </thead>
             <tbody>
-            {gamedays.map((d) => (
-                <tr key={d.gamedayid}>
-                <th>{d.title}</th>
-                <td>{d.gamedate}</td>
+            {matches.map((d) => (
+                <tr key={d._id}>
+                <th>{d.teamA}</th>
+                <td>{d.teamB}</td>
+                <td>{d.played_at}</td>
                 <td>{d.gamedayid}</td>
-                <td>{d.city}</td>
-                <td>{d.address}</td>
                 <td>{d.competitionid}</td>
                 </tr>
             ))}
