@@ -1,7 +1,7 @@
 import { display } from '@mui/system';
 import React, { Component, View, useState, useEffect} from 'react';
 import * as XLSX from "xlsx";
-import { CSVLink } from "react-csv";
+import CsvDownloader from 'react-csv-downloader';
 
 const { Parser } = require('json2csv');
 
@@ -9,10 +9,6 @@ function Upload(){
 const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
 const [fileData, setFileData ] = useState();
-
-useEffect(()=>{
-    Export();
-  }, [])
 
 const readGamedayExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -125,9 +121,7 @@ const readGamedayExcel = (file) => {
         const data = await response.json()
         const csv = json2csvParser.parse(data);
 
-        console.log("csv: " + csv);
-
-        setFileData(csv);
+        return Promise.resolve(csv);
     }
 
   return (
@@ -207,7 +201,11 @@ const readGamedayExcel = (file) => {
         <button onClick={() => uploadMatches()}>Upload wedstrijden</button>
         </div>
         <div>
-            <CSVLink data={fileData}>Export wedstrijddagen</CSVLink>
+            <CsvDownloader datas={Export} filename="myfile"
+        extension=".csv"
+        separator=";"
+        wrapColumnChar="'" 
+        text="DOWNLOAD" ></CsvDownloader>
         </div>
     </div>
   );
