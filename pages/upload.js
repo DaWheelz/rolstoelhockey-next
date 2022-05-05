@@ -31,22 +31,21 @@ function Upload(){
     });
 
     promise.then((d) => {
-      setGameDay(d);
+      setGameDay(...gameday, d);
     });
   };
 
   const uploadData = async () => {
     try {
-        const gamedaybody = JSON.stringify(gameday);
-        console.log("request body", gamedaybody);
         const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/add', {
          method: 'POST',
          headers: {
            'Content-Type': 'application/json'
            },
-           body: JSON.stringify(gameday)
+           body: JSON.stringify({gameday})
          });
-         const data = await response.json();
+
+       const data = await response.json();
       // enter you logic when the fetch is successful
          console.log(data);
        } catch(error) {
