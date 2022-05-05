@@ -120,6 +120,7 @@ const readGamedayExcel = (file) => {
         const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
         const data = await response.json()
         const csv = json2csvParser.parse(data);
+        console.log(csv);
 
         return Promise.resolve(csv);
     }
