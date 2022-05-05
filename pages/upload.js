@@ -1,5 +1,5 @@
 import { display } from '@mui/system';
-import React, { Component, View, useState} from 'react';
+import React, { Component, View, useState, useEffect} from 'react';
 import * as XLSX from "xlsx";
 import { CSVLink } from "react-csv";
 
@@ -124,6 +124,8 @@ const readGamedayExcel = (file) => {
         const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
         const data = await response.json()
         const csv = json2csvParser.parse(data);
+
+        console.log("csv: " + csv);
 
         setFileData(csv);
     }
