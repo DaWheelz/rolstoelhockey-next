@@ -8,7 +8,7 @@ const { Parser } = require('json2csv');
 function Upload(){
 const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
-const [fileData, setFileData ] = useState();
+const [fileData, setFileData ] = useState([]);
 const fileHeaders = useState([
     {label: 'ID', key: '_id'},
     {label: 'Title', key: 'title'}
