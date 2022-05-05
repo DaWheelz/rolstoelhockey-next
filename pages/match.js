@@ -28,7 +28,6 @@ class Match extends Component {
   };
 
   getMatches(gamedayid) {
-    console.log(gamedayid);
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/find/` + gamedayid).then(response => {
       this.setState({ matches: response.data });
     });
