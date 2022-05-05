@@ -1,5 +1,5 @@
 import { display } from '@mui/system';
-import React, { Component, View, useState, useEffect} from 'react';
+import React, { Component, View, useState} from 'react';
 import * as XLSX from "xlsx";
 import { CSVLink } from "react-csv";
 
@@ -8,14 +8,10 @@ const { Parser } = require('json2csv');
 function Upload(){
 const [gamedays, setGameDay] = useState([]);
 const [matches, setMatches] = useState([]);
-const [fileData, setFileData ] = useState([]);
-const fileHeaders = useState([
-    {label: 'ID', key: '_id'},
-    {label: 'Title', key: 'title'}
-  ]);
+const [fileData, setFileData ] = useState();
 
 useEffect(()=>{
-    handleDataFetch();
+    Export();
   }, [])
 
 const readGamedayExcel = (file) => {
@@ -98,8 +94,6 @@ const readGamedayExcel = (file) => {
          } 
     }
 
-    
-
     const uploadMatches = async () => {
         try {
             const data = await Promise.all(
@@ -124,11 +118,15 @@ const readGamedayExcel = (file) => {
              } 
     }
 
-    const handleDataFetch = async() => {
-        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H');
-        const respJSON = await response.json();
-        setFileData(respJSON)
-      };
+    const Export = async () => {
+        const fields = ['title', '_id'];
+        const json2csvParser = new Parser({fields});
+        const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
+        const data = await response.json()
+        const csv = json2csvParser.parse(data);
+
+        setFileData(csv);
+    }
 
   return (
     <div style={{display:'flex'}}>
@@ -207,7 +205,7 @@ const readGamedayExcel = (file) => {
         <button onClick={() => uploadMatches()}>Upload wedstrijden</button>
         </div>
         <div>
-            <CSVLink headers={fileHeaders} data={fileData} filename="results.csv" target="_blank">Export wedstrijddagen</CSVLink>
+            <CSVLink data={fileData}>Export wedstrijddagen</CSVLink>
         </div>
     </div>
   );
