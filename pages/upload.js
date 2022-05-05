@@ -122,8 +122,9 @@ const { Parser } = require('json2csv');
 
         const myURL = window.URL || window.webkitURL
 
-        var blob = new Blob([csv], { type: 'text/csv' });
-        var csvUrl = myURL.createObjectURL(blob);
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const csvUrl = myURL.createObjectURL(blob);
+        console.log(csvUrl);
         setFiledownloadlink(csvUrl);
     }
 
