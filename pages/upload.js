@@ -1,6 +1,7 @@
 import { display } from '@mui/system';
 import React, { Component, View, useState} from 'react';
 import * as XLSX from "xlsx";
+import { CSVLink } from "react-csv";
 
 const { Parser } = require('json2csv');
 
@@ -120,12 +121,12 @@ const { Parser } = require('json2csv');
         const data = await response.json()
         const csv = json2csvParser.parse(data);
 
-        const myURL = window.URL || window.webkitURL
+        const csvReport = {
+            filename: 'gamedays_export.csv',
+            headers: fields,
+            data: csv
+        };
 
-        const blob = new Blob([csv], { type: 'text/csv' });
-        const csvUrl = myURL.createObjectURL(blob);
-        console.log(csvUrl);
-        setFiledownloadlink(csvUrl);
     }
 
   return (
@@ -205,7 +206,7 @@ const { Parser } = require('json2csv');
         <button onClick={() => uploadMatches()}>Upload wedstrijden</button>
         </div>
         <div>
-            <button onClick={() => Export()} href={filedownloadlink}>Export Wedstrijd dagen met ID</button>
+            <CSVLink {...csvReport}>Export wedstrijddagen</CSVLink>
         </div>
     </div>
   );
