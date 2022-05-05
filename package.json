@@ -34,7 +34,8 @@
     "react-loading-skeleton": "^3.1.0",
     "sass": "^1.50.1",
     "styled-components": "^5.3.5",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.0.24",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tsndr/cloudflare-worker-jwt": "^1.1.7",
