@@ -52,8 +52,10 @@ const readGamedayExcel = (file) => {
         const wsname = wb.SheetNames[1];
 
         const ws = wb.Sheets[wsname];
+        console.log('log: ', ws);
 
         const data = XLSX.utils.sheet_to_json(ws, {raw: false});
+        console.log('data: ', data);
         resolve(data);
       };
 
