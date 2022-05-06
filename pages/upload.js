@@ -176,7 +176,6 @@ const readGamedayExcel = (file) => {
         <table className="table container">
             <thead>
             <tr>
-                <th scope="col">ID</th>
                 <th scope="col">Team A</th>
                 <th scope="col">Team B</th>
                 <th scope="col">Played At</th>
