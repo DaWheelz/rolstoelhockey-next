@@ -95,6 +95,7 @@ const readGamedayExcel = (file) => {
 
     const uploadMatches = async () => {
         try {
+          console.log(match);
             const data = await Promise.all(
                 matches.map(async (match) => {
                     const response = await fetch('https://rolstoelhockey-backend.herokuapp.com/matches/add', {
