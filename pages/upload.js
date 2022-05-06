@@ -103,7 +103,7 @@ const readGamedayExcel = (file) => {
                          headers: {
                            'Content-Type': 'application/json'
                            },
-                           body: JSON.stringify({teamA: match.teamA, scoreA: 0, scoreB: 0, teamB: match.teamB, gamedayid: match.gamedayid, played_at: match.playedAt, competitionid: match.competitionid})
+                           body: JSON.stringify({teamA: match.teamA, scoreA: 0, scoreB: 0, teamB: match.teamB, gamedayid: match.gamedayid, played_at: match.played_at, competitionid: match.competitionid})
                     });
     
                          return await response.json();
