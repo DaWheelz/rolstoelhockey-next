@@ -188,7 +188,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 })}
           </TabPanel>
         {/* <GoogleAd /> */}
-        <div id="container-7ece5979652d8f53ccbc231d827920a8"></div>
         <CookieConsent location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
           Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
         </CookieConsent>

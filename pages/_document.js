@@ -52,7 +52,6 @@ export default class MyDocument extends Document {
           `,
                         }}
                     />
-                    <script async="async" data-cfasync="false" src="//pl17267218.safestgatetocontent.com/7ece5979652d8f53ccbc231d827920a8/invoke.js"></script>
         </Head>
         <body>
           <Main />
