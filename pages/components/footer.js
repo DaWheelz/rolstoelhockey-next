@@ -15,7 +15,7 @@ export default function Header () {
           <a style={{padding:20}} href="mailto:rolstoelhockeyapp@gmail.com">Contact</a>
           <a style={{padding:20}} href="/policy">Privacybeleid</a>
         </div>
-        <p >© 2022 Rolstoelhockey. All rights reserved.</p>
+        <p>© 2022 Rolstoelhockey. All rights reserved.</p>
       </footer>
     );
   };
