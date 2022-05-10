@@ -59,7 +59,7 @@ class Contact extends Component {
             sort: this.state.sort
         }
 
-        axios.post('https://rolstoelhockey-backend.herokuapp.com//mail/send', info)
+        axios.post('https://rolstoelhockey-backend.herokuapp.com/mail/send', info)
             .then(response => {
                 console.log("res: " + response);
             })

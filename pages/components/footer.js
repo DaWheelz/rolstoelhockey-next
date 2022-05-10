@@ -7,7 +7,7 @@ import { width } from '@mui/system';
 export default function Header () {
 
     return (
-      <footer className='footer' style={{gap: '1.25rem', alignItems: 'center', flexDirection: 'column', display: 'flex', backgroundColor: '#292929'}}>
+      <footer className='footer' style={{gap: '1.25rem', alignItems: 'center', flexDirection: 'column', display: 'flex', backgroundColor: '#292929', flexGrow: 1}}>
         <div style={{justifyContent: 'center', display: 'flex'}}>
           <a style={{padding:20}} href="https://www.facebook.com/rolstoelhockey">Facebook</a>
           <a style={{padding:20}} href="https://apps.apple.com/nl/app/rolstoelhockey/id1512920070?fbclid=IwAR0r_IPRFdGomX1k70Ol1bLXhbTHPOt2by2XGc6fiTBr9f5D4jvCYBjnFPg">iOS</a>
