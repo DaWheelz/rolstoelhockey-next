@@ -13,7 +13,7 @@ export default function Header () {
         <GlobalStyle />
         <Container fluid>
             <Link href="/">
-              <img src='img/navbar_logo_rolstoelhockeyV2.png' alt="" width={100} height={28} className="toolbar__logo"></img>
+              <img src='img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo"></img>
             </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

@@ -1,11 +1,8 @@
 import React, { Component, View, useState} from 'react';
-import axios from "axios";
-import Skeleton, {SkeletonTheme } from 'react-loading-skeleton';
 import GlobalStyle from './components/styled_components';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import CookieConsent from "react-cookie-consent";
@@ -81,8 +78,8 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
   };
 
   return (
-    <Box>
-      <GlobalStyle />
+    <div>
+    <GlobalStyle />
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons allowScrollButtonsMobile aria-label="scrollable auto tabs example">
               <Tab label="Uitslagen - H" {...a11yProps(0)} />
@@ -99,12 +96,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date">{game_date}</div>
+                    <div className="match-date text-slate-400" >{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score">{match.scoreA}</div>
+                  <div className="match-score text-slate-400">{match.scoreA}</div>
                   <div className="match-score"> - </div>
-                  <div className="match-score">{match.scoreB}</div>
+                  <div className="match-score text-slate-400">{match.scoreB}</div>
                   <div className="match-teamb">{match.teamB}</div>
                 </div>
               )
@@ -118,12 +115,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date">{game_date}</div>
+                    <div className="match-date text-slate-400">{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score">{match.scoreA}</div>
+                  <div className="match-score text-slate-400">{match.scoreA}</div>
                   <div className="match-score"> - </div>
-                  <div className="match-score">{match.scoreB}</div>
+                  <div className="match-score text-slate-400">{match.scoreB}</div>
                   <div className="match-teamb">{match.teamB}</div>
                 </div>
               )
@@ -152,7 +149,15 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                           <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
                           <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
                           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
-                          <a className='button' href={locationurl}>Navigeer</a>
+                          <a href={locationurl}>
+                          <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                              <span>Navigeer</span>
+                            </button>
+                          </a>
                         </div>
                       </div>
                       )
@@ -181,17 +186,24 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                           <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
                           <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
                           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
-                          <a className='button' href={locationurl}>Navigeer</a>
+                          <a href={locationurl}>
+                            <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                              <span>Navigeer</span>
+                            </button>
+                          </a>
                         </div>
                       </div>
                       )
                 })}
           </TabPanel>
-        {/* <GoogleAd /> */}
         <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
           Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
         </CookieConsent>
-        </Box>
+        </div>
   )
 }
 

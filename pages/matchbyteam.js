@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import GlobalStyle from "./components/styled_components";
 
 var bgColors = {
   "Default": "#81b71a",
@@ -48,7 +49,7 @@ class MatchByTeam extends Component {
                   display: "--H-Hockey--", 
                   style : {
                     fontWeight: '600',
-                    color: '#ff7b00'
+                    color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
                   }
                 }
             ].concat(teamsFromApi)
@@ -67,7 +68,7 @@ class MatchByTeam extends Component {
                           display: "--E-Hockey--", 
                           style : {
                             fontWeight: '600',
-                            color: '#ff7b00'
+                            color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
                           }
                         }
                     ].concat(teamsFromApi)
@@ -98,8 +99,10 @@ class MatchByTeam extends Component {
 
     return (
       <div style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-        <div className="search-bar">
+        <GlobalStyle />
+        <div>
           <h4 style={{ width: '50%', fontWeight: '600' }}>Zoek wedstrijden per team</h4>
+          <p>Benieuwd wanneer jouw team moet spelen? Met deze nieuwe functie kun je dit snel vinden.</p>
           <div style={{ display: 'flex' }}>
             <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
               {this.state.teams.map(team => (

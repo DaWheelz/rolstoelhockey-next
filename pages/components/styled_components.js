@@ -219,7 +219,6 @@ color: #ef790c
 }
 .match-date{
     font-size: small;
-    color:#ff7b00;
     margin-left: 20px;
     width: 80px;
 }
@@ -235,7 +234,6 @@ color: #ef790c
     font-size: 17;
     width: 20%;
     text-align: center;
-    color: #ff7b00;
 }
 
 @media only screen and (min-width: 600px){

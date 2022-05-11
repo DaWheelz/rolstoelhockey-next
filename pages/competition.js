@@ -51,90 +51,70 @@ class Settings extends Component {
     }
     render() {
         return (
-            <div>
-                
-                <div style={{ display: 'flex' }}>
-                    <select className='custom-select' value={this.state.compId} onChange={(e) => { this.getTeamsH(e.target.value); this.getTeamsE(e.target.value); }}>
-                        {compDivision.map(comp => (
-                            <option
-                                key={comp.id}
-                                value={comp.id}>
-                                {comp.title}
-                            </option>
-                        ))}
-                    </select>
+            <div class="p-7">
+                <select class="form-select appearance-none block w-full px-3 py-1.5 my-3 text-base font-normal bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.compId} onChange={(e) => { this.getTeamsH(e.target.value); this.getTeamsE(e.target.value); }}>
+                    {compDivision.map(comp => (
+                        <option
+                            key={comp.id}
+                            value={comp.id}>
+                            {comp.title}
+                        </option>
+                    ))}
+                </select>
+                <div class="flex flex-col">
+                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="overflow-hidden">
+                            <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th>Naam</th>
+                                    <th class="px-4">GS</th>
+                                    <th class="px-4">GW</th>
+                                    <th class="px-4">GL</th>
+                                    <th class="px-4">VL</th>
+                                    <th class="px-4">PT</th>
+                                    <th class="px-4">V</th>
+                                    <th class="px-4">T</th>
+                                    <th class="px-4">DS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="whitespace-nowrap text-large font-medium text-slate-900">Competitie - H</td>
+                                {this.state.teamsH.map(team => (
+                                    <tr key={team._id}>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
+                                    </tr>
+                                ))}
+                                    <td class="whitespace-nowrap text-large font-medium text-slate-900">Competitie - E</td>
+                                    {this.state.teamsE.map(team => (
+                                    <tr key={team._id}>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
+                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="pageblock" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-                <a>H-Hockey</a>
-                <TableContainer>
-                    <Table aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">Naam</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">GS</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">GW</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">GL</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">VL</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">PT</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">V</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">T</TableCell>
-                                <TableCell style={{ fontWeight: 'bold' }} align="center">DS</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {this.state.teamsH.map(team => (
-                                <TableRow key={team._id} style={{ height: '20px' }}>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.teamname}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.GS}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.GW}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.GL}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.VL}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.PT}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.V}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.T}</TableCell>
-                                    <TableCell component="th" scope="row" padding="none" align="center">{team.DS}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div >
-            <div className="pageblock" style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-            <a>E-Hockey</a>
-            <TableContainer>
-                <Table aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">Naam</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">GS</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">GW</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">GL</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">VL</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">PT</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">V</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">T</TableCell>
-                            <TableCell style={{ fontWeight: 'bold' }} align="center">DS</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {this.state.teamsE.map(team => (
-                            <TableRow key={team._id} style={{ height: '20px' }}>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.teamname}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.GS}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.GW}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.GL}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.VL}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.PT}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.V}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.T}</TableCell>
-                                <TableCell component="th" scope="row" padding="none" align="center">{team.DS}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
         </div >
-        </div>
         );
     }
 }

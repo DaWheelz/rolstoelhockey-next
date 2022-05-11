@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import GlobalStyle from './components/styled_components';
 
 var bgColors = {
   "Default": "#81b71a",
@@ -24,17 +25,12 @@ class Match extends Component {
   
   UNSAFE_componentWillMount() {
     this.getGameDays();
-    this.getAcces();
   };
 
   getMatches(gamedayid) {
     axios.get(`https://rolstoelhockey-backend.herokuapp.com/matches/find/` + gamedayid).then(response => {
       this.setState({ matches: response.data });
     });
-  }
-
-  getAcces() {
-    //this.state.role = sessionStorage.getItem('role');
   }
 
   getGameDays() {
@@ -54,7 +50,7 @@ class Match extends Component {
                 "H-Hockey",
               style : {
                 fontWeight: '600',
-                color: '#ff7b00'
+                color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
               }
             }
           ].concat(gamedaysFromApi)
@@ -75,7 +71,7 @@ class Match extends Component {
                 "E-Hockey",
               style : {
                 fontWeight: '600',
-                color: '#ff7b00'
+                color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
               }
             }
           ].concat(gamedaysFromApi)
@@ -86,20 +82,6 @@ class Match extends Component {
 
   render() {
     const matchItems = this.state.matches.map((match, _id) => {
-      if (this.state.role === 'admin') {
-        return (
-          <a href={`/editmatch/?matchid=${match._id}`} style={{}}>
-            <div className="match-group">
-              <div className="match-time">{match.played_at}</div>
-              <div className="match-teama">{match.teamA}</div>
-              <div className="match-score">{match.scoreA}</div>
-              <div className="match-score"> : </div>
-              <div className="match-score">{match.scoreB}</div>
-              <div className="match-teamb">{match.teamB}</div>
-            </div>
-          </a>
-        );
-      } else {
         return (
           <div className="match-group">
             <div className="match-time">{match.played_at}</div>
@@ -110,15 +92,15 @@ class Match extends Component {
             <div className="match-teamb">{match.teamB}</div>
           </div>
         );
-      }
-    });
+      });
 
     return (
-      <div style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
-        <div className="search-bar">
+      <div style={{ border: '1px solid #dadada',backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }} class="p-7">
+        <GlobalStyle />
+        <div>
           <h4 style={{ width: '20%', fontWeight: '600' }}>Alle wedstrijden</h4>
           <div style={{ display: 'flex' }}>
-            <select className="custom-select" value={this.state.selectedGameDay} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
+            <select class="form-select appearance-none block w-50 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.selectedGameDay} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
               {this.state.gamedays.map(gameday => (
                 <option
                   key={gameday.value}
