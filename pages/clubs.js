@@ -21,28 +21,28 @@ export async function getStaticProps() {
 
 function Club ({clubsH, clubsE}){
     return (
-        <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden">
-                    <table class="min-w-full">
+        <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="overflow-hidden">
+                    <table className="min-w-full">
                     <tbody>
-                        <td class="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - H</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - H</td>
                             {clubsH.map((club) => {
                             return (
-                                <tr class="border-b" key={club._id}>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.clubname}</td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.address}</td>
-                                    <a href={club.website}><td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Website</td></a>
+                                <tr className="border-b" key={club._id}>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.clubname}</td>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.address}</td>
+                                    <a href={club.website}><td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Website</td></a>
                                 </tr>
                             )})}
-                            <td class="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - E</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - E</td>
                             {clubsE.map((club) => {
                             return (
-                                <tr class="border-b" key={club._id}>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.clubname}</td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.address}</td>
-                                    <a href={club.website}><td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Website</td></a>
+                                <tr className="border-b" key={club._id}>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.clubname}</td>
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{club.address}</td>
+                                    <a href={club.website}><td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Website</td></a>
                                 </tr>
                             )})}
                     </tbody>

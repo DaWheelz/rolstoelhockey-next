@@ -51,8 +51,8 @@ class Settings extends Component {
     }
     render() {
         return (
-            <div class="p-7">
-                <select class="form-select appearance-none block w-full px-3 py-1.5 my-3 text-base font-normal bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.compId} onChange={(e) => { this.getTeamsH(e.target.value); this.getTeamsE(e.target.value); }}>
+            <div className="p-7">
+                <select className="form-select appearance-none block w-full px-3 py-1.5 my-3 text-base font-normal bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.compId} onChange={(e) => { this.getTeamsH(e.target.value); this.getTeamsE(e.target.value); }}>
                     {compDivision.map(comp => (
                         <option
                             key={comp.id}
@@ -61,51 +61,51 @@ class Settings extends Component {
                         </option>
                     ))}
                 </select>
-                <div class="flex flex-col">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="overflow-hidden">
-                            <table class="min-w-full">
+                <div className="flex flex-col">
+                    <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                        <div className="overflow-hidden">
+                            <table className="min-w-full">
                             <thead>
                                 <tr>
                                     <th>Naam</th>
-                                    <th class="px-4">GS</th>
-                                    <th class="px-4">GW</th>
-                                    <th class="px-4">GL</th>
-                                    <th class="px-4">VL</th>
-                                    <th class="px-4">PT</th>
-                                    <th class="px-4">V</th>
-                                    <th class="px-4">T</th>
-                                    <th class="px-4">DS</th>
+                                    <th className="px-4">GS</th>
+                                    <th className="px-4">GW</th>
+                                    <th className="px-4">GL</th>
+                                    <th className="px-4">VL</th>
+                                    <th className="px-4">PT</th>
+                                    <th className="px-4">V</th>
+                                    <th className="px-4">T</th>
+                                    <th className="px-4">DS</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <td class="whitespace-nowrap text-large font-medium text-slate-900">Competitie - H</td>
+                                <td className="whitespace-nowrap text-large font-medium text-slate-900">Competitie - H</td>
                                 {this.state.teamsH.map(team => (
                                     <tr key={team._id}>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
                                     </tr>
                                 ))}
-                                    <td class="whitespace-nowrap text-large font-medium text-slate-900">Competitie - E</td>
+                                    <td className="whitespace-nowrap text-large font-medium text-slate-900">Competitie - E</td>
                                     {this.state.teamsE.map(team => (
                                     <tr key={team._id}>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
-                                        <td class="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.teamname}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GS}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GW}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.GL}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.VL}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.PT}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.V}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.T}</td>
+                                        <td className="text-sm text-gray-900 px-4 py-2 whitespace-nowrap">{team.DS}</td>
                                     </tr>
                                 ))}
                             </tbody>
