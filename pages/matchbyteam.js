@@ -49,7 +49,7 @@ class MatchByTeam extends Component {
                   display: "--H-Hockey--", 
                   style : {
                     fontWeight: '600',
-                    color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
+                    color: 'rgb(234 88 12)'
                   }
                 }
             ].concat(teamsFromApi)
@@ -68,7 +68,7 @@ class MatchByTeam extends Component {
                           display: "--E-Hockey--", 
                           style : {
                             fontWeight: '600',
-                            color: 'rgb(51 65 85 / var(--tw-bg-opacity))'
+                            color: 'rgb(234 88 12)'
                           }
                         }
                     ].concat(teamsFromApi)
@@ -86,12 +86,12 @@ class MatchByTeam extends Component {
     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2);
         return (
             <div key={match._id} className="match-group">
-              <div className="match-date">{game_date}</div>
+              <div className="match-date text-orange-600">{game_date}</div>
               <div className="match-time">{match.played_at}</div>
               <div className="match-teama">{match.teamA}</div>
-              <div className="match-score">{match.scoreA}</div>
+              <div className="match-score text-orange-600">{match.scoreA}</div>
               <div className="match-score"> : </div>
-              <div className="match-score">{match.scoreB}</div>
+              <div className="match-score text-orange-600">{match.scoreB}</div>
               <div className="match-teamb">{match.teamB}</div>
             </div>
         );

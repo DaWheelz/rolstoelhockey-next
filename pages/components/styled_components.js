@@ -220,7 +220,7 @@ color: #ef790c
 .match-date{
     font-size: small;
     margin-left: 20px;
-    width: 80px;
+    width: 7rem;
 }
 .match-teama{
     font-size: small;

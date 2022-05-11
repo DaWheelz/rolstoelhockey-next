@@ -96,12 +96,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date text-slate-400" >{game_date}</div>
+                    <div className="match-date text-orange-600" >{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score text-slate-400">{match.scoreA}</div>
+                  <div className="match-score text-orange-600">{match.scoreA}</div>
                   <div className="match-score"> - </div>
-                  <div className="match-score text-slate-400">{match.scoreB}</div>
+                  <div className="match-score text-orange-600">{match.scoreB}</div>
                   <div className="match-teamb">{match.teamB}</div>
                 </div>
               )
@@ -115,12 +115,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 <div key={match._id} className="match-group">
                   <div className="match-time-date">
                     <div className="match-time">{match.played_at}</div>
-                    <div className="match-date text-slate-400">{game_date}</div>
+                    <div className="match-date text-orange-600">{game_date}</div>
                   </div>
                   <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score text-slate-400">{match.scoreA}</div>
+                  <div className="match-score text-orange-600">{match.scoreA}</div>
                   <div className="match-score"> - </div>
-                  <div className="match-score text-slate-400">{match.scoreB}</div>
+                  <div className="match-score text-orange-600">{match.scoreB}</div>
                   <div className="match-teamb">{match.teamB}</div>
                 </div>
               )

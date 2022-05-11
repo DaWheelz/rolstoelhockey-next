@@ -11,12 +11,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="flex items-center flex-wrap bg-slate-700 p-3 ">
+      <nav className="flex items-center flex-wrap bg-gradient-to-r from-orange-600 to-orange-500 p-3">
         <Link href="/">
         <Image src='/img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo" />
         </Link>
         <button
-          className=" inline-flex p-3 hover:bg-slate-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+          className=" inline-flex p-3 hover:bg-orange-500 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
           onClick={handleClick}
         >
           <svg
@@ -42,28 +42,23 @@ export default function Navbar() {
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             <Link href="/clubs">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-slate-600 hover:text-white ">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white ">
                 Clubs
               </a>
             </Link>
             <Link href="/match">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-slate-600 hover:text-white">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white">
                 Uitslagen
               </a>
             </Link>
             <Link href="/matchbyteam">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-slate-600 hover:text-white">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white">
               Zoek wedstrijd
               </a>
             </Link>
             <Link href="/competition">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-slate-600 hover:text-white">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white">
               Competitie overzicht
-              </a>
-            </Link>
-            <Link href="/contact">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-slate-600 hover:text-white">
-              Contact
               </a>
             </Link>
           </div>
