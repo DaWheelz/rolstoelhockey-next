@@ -95,7 +95,7 @@ class Match extends Component {
         <div>
           <h4 style={{ width: '20%', fontWeight: '600' }}>Alle wedstrijden</h4>
           <div style={{ display: 'flex' }}>
-            <select className="form-select appearance-none block w-50 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.selectedGameDay} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
+            <select className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.selectedGameDay} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedGameDay: e.target.value }); }}>
               {this.state.gamedays.map(gameday => (
                 <option
                   key={gameday.value}

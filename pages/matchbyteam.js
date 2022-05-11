@@ -104,7 +104,7 @@ class MatchByTeam extends Component {
           <h4 style={{ width: '50%', fontWeight: '600' }}>Zoek wedstrijden per team</h4>
           <p>Benieuwd wanneer jouw team moet spelen? Met deze nieuwe functie kun je dit snel vinden.</p>
           <div style={{ display: 'flex' }}>
-            <select className="custom-select" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
+            <select className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" value={this.state.selectedTeam} onChange={(e) => { this.getMatches(e.target.value); this.setState({ selectChanged: true, selectedTeam: e.target.display }); }}>
               {this.state.teams.map(team => (
                 <option
                   key={team.value}
