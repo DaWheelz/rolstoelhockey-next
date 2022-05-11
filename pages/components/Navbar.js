@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from 'next/image';
 import { useState } from "react";
 
-export const Navbar = () => {
+export default function Navbar() {
   const [active, setActive] = useState(false);
 
   const handleClick = () => {
@@ -12,7 +13,7 @@ export const Navbar = () => {
     <>
       <nav className="flex items-center flex-wrap bg-slate-700 p-3 ">
         <Link href="/">
-        <img src='img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo"></img>
+        <Image src='/img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo" />
         </Link>
         <button
           className=" inline-flex p-3 hover:bg-slate-600 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
