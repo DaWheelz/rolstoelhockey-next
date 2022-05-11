@@ -151,12 +151,12 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
                           <a href={locationurl}>
                           <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                               <span>Navigeer</span>
-                            </button>
+                          </button>
                           </a>
                         </div>
                       </div>
@@ -187,13 +187,13 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                           <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
                           <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
                           <a href={locationurl}>
-                            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                               <span>Navigeer</span>
-                            </button>
+                          </button>
                           </a>
                         </div>
                       </div>

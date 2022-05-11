@@ -83,7 +83,7 @@ class Match extends Component {
   render() {
     const matchItems = this.state.matches.map((match, _id) => {
         return (
-          <div className="match-group">
+          <div className="match-group" key={_id}>
             <div className="match-time">{match.played_at}</div>
             <div className="match-teama">{match.teamA}</div>
             <div className="match-score">{match.scoreA}</div>
