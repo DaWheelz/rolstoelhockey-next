@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="flex items-center flex-wrap bg-gradient-to-r from-orange-600 to-orange-500 p-3">
-        <Link href="/">
+        <Link href="/overview">
         <Image src='/img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo" />
         </Link>
         <button
@@ -41,6 +41,11 @@ export default function Navbar() {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+            <Link href="/overview">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white ">
+                Overzicht
+              </a>
+            </Link>
             <Link href="/clubs">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white ">
                 Clubs
