@@ -17,10 +17,10 @@ export async function getStaticProps() {
   const resMatchesE = await fetch('https://rolstoelhockey-backend.herokuapp.com/matches/findlatest/E')
   const matchesE = await resMatchesE.json()
 
-  const resGamedaysH = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/upcoming/H')
+  const resGamedaysH = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/H')
   const gamedaysH = await resGamedaysH.json()
 
-  const resGamedaysE = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/upcoming/E')
+  const resGamedaysE = await fetch('https://rolstoelhockey-backend.herokuapp.com/gamedays/get/E')
   const gamedaysE = await resGamedaysE.json()
 
   return {
