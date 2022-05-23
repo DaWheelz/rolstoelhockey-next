@@ -1,6 +1,6 @@
 import className from 'classnames';
 import { useRouter } from 'next/router';
-import { Button } from '../components/Button';
+import { Button } from '../Button';
 
 type IVerticalFeatureRowProps = {
   title: string;

@@ -1,5 +1,5 @@
 import { VerticalFeatureRow } from '../feature/VerticalFeatureRow';
-import { Section } from '../layout/Section';
+import { Section } from './Section';
 import Image from 'next/image';
 
 import ImageIos from '../../public/img/apple_download.png'

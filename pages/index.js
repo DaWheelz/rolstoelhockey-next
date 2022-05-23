@@ -2,11 +2,11 @@ import React, { Component, View, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Section } from './layout/Section';
-import { HeroOneButton } from './components/HeroOneButton';
-import { Button } from './components/Button';
-import { Background } from './components/Background';
-import { VerticalFeatures } from './layout/VerticalFeatures';
+import { Section } from '../home_components/layout/Section';
+import { HeroOneButton } from '../home_components/HeroOneButton';
+import { Button } from '../home_components/Button';
+import { Background } from '../home_components/Background';
+import { VerticalFeatures } from '../home_components/layout/VerticalFeatures';
 
 function FrontPage() {
 
