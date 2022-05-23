@@ -22,7 +22,7 @@ function FrontPage() {
             }
             description="Alle uitslagen en standen van de H- en E-Hockey overzichtelijk in één app."
             button={
-              <Link href="/uitslagen">
+              <Link href="/overview">
                 <div className='text-xl'>
                   <Button xl>Bekijk uitslagen</Button>
                 </div>
