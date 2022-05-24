@@ -5,7 +5,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import CookieConsent from "react-cookie-consent";
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -200,9 +199,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                 })}
           </TabPanel>
-        <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
-          Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
-        </CookieConsent>
         </div>
   )
 }

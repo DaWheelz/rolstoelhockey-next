@@ -1,6 +1,8 @@
 import React, { Component, View, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import CookieConsent from "react-cookie-consent";
+
 
 import { Section } from '../home_components/layout/Section';
 import { HeroOneButton } from '../home_components/HeroOneButton';
@@ -34,8 +36,10 @@ function FrontPage() {
       <Background>
         <VerticalFeatures />
       </Background>
+      <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
+          Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
+      </CookieConsent>
     </div>
-    
   )
 }
 
