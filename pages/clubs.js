@@ -14,8 +14,7 @@ export async function getStaticProps() {
         props: {
             clubsH,
             clubsE
-        },
-        revalidate: 60
+        }
     }
 }
 
