@@ -42,7 +42,7 @@ export async function getStaticProps() {
           return (
             <Link key={post.id} as={`/posts/${post.slug}`} href="/posts/[slug]">
               <a className="max-w-fit shadow-md rounded-lg mx-auto flex">
-              <img src={post.coverImage.url} alt="..." class="shadow rounded h-96 w-auto border-none" />
+              <img src={post.coverImage.url} alt="..." className="shadow rounded h-96 w-auto border-none" />
                 <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                   <div className="mb-8">
                     <div className="text-gray-900 font-bold text-xl mb-2">

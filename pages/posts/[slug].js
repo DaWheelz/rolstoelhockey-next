@@ -78,7 +78,7 @@ export default function Post({ post }) {
         </Link>
       </div>
       <div className="max-w-fit shadow-md rounded-lg mx-auto flex px-10">
-      <img src={post.coverImage.url} alt="..." class="shadow rounded h-96 w-auto border-none" />
+      <img src={post.coverImage.url} alt="..." className="shadow rounded h-96 w-auto border-none" />
         <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 leading-normal content-center">
           <div className="mb-8">
             <div className="text-gray-900 font-bold text-xl mb-2">
