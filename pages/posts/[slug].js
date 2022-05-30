@@ -77,7 +77,7 @@ export default function Post({ post }) {
           <a className="underline decoration-orange-600">Terug naar alle nieuwsberichten</a>
         </Link>
       </div>
-      <div className="max-w-fit shadow-md rounded-lg mx-auto flex px-10">
+      <div className="px-10 lg:flex ">
       <img src={post.coverImage.url} alt="..." className="shadow rounded h-96 w-auto border-none" />
         <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 leading-normal content-center">
           <div className="mb-8">
