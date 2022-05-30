@@ -43,9 +43,14 @@ export const getServerSideProps = async ({ res }) => {
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${allPaths
         .map((url) => {
+          const path = url
+                    .replace('pages', '')
+                    .replace('.js', '')
+                    .replace('.mdx', '');
+          const route = path === '/index' ? '' : path;
           return `
           <url>
-              <loc>${url}</loc>
+              <loc>${route}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
