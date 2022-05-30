@@ -61,15 +61,15 @@ export async function getStaticProps() {
               // </a>
 
           <Link key={post.id} as={`/posts/${post.slug}`} href="/posts/[slug]">
-          <div class="flex justify-center p-10">
-            <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-              <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={post.coverImage.url} alt="" />
-              <div class="p-6 flex flex-col justify-start">
-                <h5 class="text-gray-900 text-xl font-medium mb-2">{post.title}</h5>
-                <p class="text-gray-700 text-base mb-4">
+          <div className="flex justify-center p-10">
+            <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
+              <img className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src={post.coverImage.url} alt="" />
+              <div className="p-6 flex flex-col justify-start">
+                <h5 className="text-gray-900 text-xl font-medium mb-2">{post.title}</h5>
+                <p className="text-gray-700 text-base mb-4">
                 {post.excerpt}
                 </p>
-                <p class="text-gray-600 text-xs">{post.author.name}</p>
+                <p className="text-gray-600 text-xs">{post.author.name}</p>
               </div>
             </div>
           </div>
