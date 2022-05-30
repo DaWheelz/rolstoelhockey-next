@@ -26,13 +26,13 @@ const Button = (props: IButtonProps) => {
             @apply text-sm font-semibold py-2 px-4;
           }
           .btn-xl {
-            @apply font-extrabold text-xl py-5 px-8 text-sm	;
+            @apply font-extrabold text-xl py-5 px-8 text-sm	bg-orange-600;
           }
           .btn-primary {
-            @apply text-white bg-primary-500;
+            @apply text-white bg-orange-600;
           }
           .btn-primary:hover {
-            @apply bg-primary-600;
+            @apply bg-orange-600;
           }
         `}
       </style>

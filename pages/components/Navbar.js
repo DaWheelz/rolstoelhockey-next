@@ -46,6 +46,11 @@ export default function Navbar() {
                 Overzicht
               </a>
             </Link>
+            <Link href="/nieuws">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white ">
+                Nieuws
+              </a>
+            </Link>
             <Link href="/clubs">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:bg-orange-500 hover:text-white ">
                 Clubs

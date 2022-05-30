@@ -21,28 +21,28 @@ export async function getStaticProps() {
 
 function Club ({clubsH, clubsE}){
     return (
-        <div className="flex flex-col">
+        <div className="min-h-screen p-4">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
                     <table className="min-w-full">
                     <tbody>
-                        <td className="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - H</td>
+                        <td className="py-4 whitespace-nowrap font-medium text-lg underline decoration-orange-600">Teams - H</td>
                             {clubsH.map((club) => {
                             return (
                                 <tr className="border-b" key={club._id}>
-                                    <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{club.clubname}</td>
-                                    <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{club.address}</td>
-                                    <a href={club.website}><td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">Website</td></a>
+                                    <td className="text-md px-6 py-4 whitespace-nowrap">{club.clubname}</td>
+                                    <td className="text-md px-6 py-4 whitespace-nowrap">{club.address}</td>
+                                    <a href={club.website}><td className="text-md py-4 whitespace-nowrap">Website</td></a>
                                 </tr>
                             )})}
-                            <td className="px-6 py-4 whitespace-nowrap text-large font-medium text-gray-900">Teams - E</td>
+                            <td className="py-4 whitespace-nowrap font-medium text-lg underline decoration-orange-600">Teams - E</td>
                             {clubsE.map((club) => {
                             return (
                                 <tr className="border-b" key={club._id}>
-                                    <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{club.clubname}</td>
-                                    <td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">{club.address}</td>
-                                    <a href={club.website}><td className="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">Website</td></a>
+                                    <td className="text-md px-6 py-4 whitespace-nowrap">{club.clubname}</td>
+                                    <td className="text-md px-6 py-4 whitespace-nowrap">{club.address}</td>
+                                    <a href={club.website}><td className="text-md py-4 whitespace-nowrap">Website</td></a>
                                 </tr>
                             )})}
                     </tbody>

@@ -90,7 +90,7 @@ class Match extends Component {
       });
 
     return (
-      <div style={{ border: '1px solid #dadada',backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }} className="p-7">
+      <div className="min-h-screen p-7">
         <GlobalStyle />
         <div>
           <h4 style={{ width: '20%', fontWeight: '600' }}>Alle wedstrijden</h4>

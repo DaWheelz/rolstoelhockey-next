@@ -1,22 +1,12 @@
-import '../styles/globals.css'
 import Layout from './components/layout'
 import Head from 'next/head'
-import '../styles/scss/global.scss'
 import React from 'react';
 import Script from 'next/script'
 
 export default function MyApp({ Component, pageProps }) {
 
-  React.useEffect(() => {
-    // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
-
   return (
-    <div>
+    <div className='min-h-screen bg-gray-100'>
       <Head>
         <title>Uitslagen en standen | Rolstoelhockey App</title>
         <meta name="description" content="De officiële Rolstoelhockey app voor de H en E hockey competitie! Snel en overzichtelijk alle uitslagen bekijken." />

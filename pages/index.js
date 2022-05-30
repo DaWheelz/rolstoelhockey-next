@@ -2,7 +2,7 @@ import React, { Component, View, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import CookieConsent from "react-cookie-consent";
-
+import "tailwindcss/tailwind.css";
 
 import { Section } from '../home_components/layout/Section';
 import { HeroOneButton } from '../home_components/HeroOneButton';
@@ -11,7 +11,6 @@ import { Background } from '../home_components/Background';
 import { VerticalFeatures } from '../home_components/layout/VerticalFeatures';
 
 function FrontPage() {
-
   return (
     <div>
       <Background color="bg-gray-100">
@@ -25,9 +24,7 @@ function FrontPage() {
             description="Alle uitslagen en standen van de H- en E-Hockey overzichtelijk in één app."
             button={
               <Link href="/overview">
-                <div className='text-xl'>
-                  <Button xl>Bekijk uitslagen</Button>
-                </div>
+                <a className='bg-orange-600 p-3 rounded-lg'>Bekijk uitslagen</a>
               </Link>
             }
           />

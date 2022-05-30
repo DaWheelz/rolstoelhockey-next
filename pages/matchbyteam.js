@@ -98,7 +98,7 @@ class MatchByTeam extends Component {
       });
 
     return (
-      <div style={{ border: '1px solid #dadada', padding: '20px', backgroundColor: 'white', borderRadius: '.1875rem', boxShadow: '0 1px 15px 1px rgba(39,39,39,.1)' }}>
+      <div className="min-h-screen p-7">
         <GlobalStyle />
         <div>
           <h4 style={{ width: '50%', fontWeight: '600' }}>Zoek wedstrijden per team</h4>

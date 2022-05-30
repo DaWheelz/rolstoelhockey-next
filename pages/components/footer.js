@@ -1,7 +1,7 @@
 export default function Footer () {
 
     return (
-      <footer className="p-2 bg-gray-100 md:flex md:items-center md:justify-between md:p-2 border-t-2">
+      <footer className="p-2 bg-gray-200 md:flex md:items-center md:justify-between md:p-2 border-t-2">
       <span className="text-sm sm:text-center">© 2022 <a href="https://rolstoelhockey.app" className="hover:underline">Rolstoelhockey™</a>. All Rights Reserved.
       </span>
       <ul className="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
