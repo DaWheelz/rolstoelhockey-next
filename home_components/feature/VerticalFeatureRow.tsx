@@ -2,6 +2,7 @@ import className from 'classnames';
 import { useRouter } from 'next/router';
 import { Button } from '../Button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type IVerticalFeatureRowProps = {
   title: string;
@@ -35,7 +36,7 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
         </div>
       </div>
       <div className="w-full sm:w-1/2 p-6">
-        <img className="rounded-xl shadow-lg" src={`${props.image}`} alt={props.imageAlt} />
+        <Image className="rounded-xl shadow-lg" width="430rem" height="370rem" src={`${props.image}`} alt={props.imageAlt} />
       </div>
     </div>
   );

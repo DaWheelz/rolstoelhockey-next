@@ -4,7 +4,7 @@
     "start_url": "/",
     "name": "Rolstoelhockey",
     "theme_color": "#dd6b20",
-    "background-color": "#fafafa",
+    "background_color": "#fafafa",
     "short_name": "Rolstoelhockey",
     "description": "Alle uitslagen en standen van de Rolstoelhockey competities in een overzicht!",
     "icons": [
