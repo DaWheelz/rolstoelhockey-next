@@ -24,6 +24,10 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
 
   const router = useRouter();
 
+  const sanityIoImageLoader = ({ src, width, quality }) => {
+    return `https://cdn.sanity.io/${src}?w=${width}&q=${quality || 75}`
+  }
+
   return (
     <div className={verticalFeatureClass}>
       <div className="w-full sm:w-1/2 text-center sm:px-6">
@@ -36,7 +40,7 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
         </div>
       </div>
       <div className="w-full sm:w-1/2 p-6">
-        <Image className="rounded-xl shadow-lg" width="430rem" height="370rem" src={`${props.image}`} alt={props.imageAlt} />
+        <Image className="rounded-xl shadow-lg" layout="responsive" width={421} height={370} quality={100} src={`${props.image}`} alt={props.imageAlt} />
       </div>
     </div>
   );
