@@ -12,10 +12,10 @@ const VerticalFeatures = () => (
   >
     <div style={{justifyContent:'space-around', display:'flex', margin:30}}>
         <a href="https://apps.apple.com/kg/app/rolstoelhockey/id1512920070">
-            <Image src={ImageIos} width={203} height={70}/>
+            <Image src={ImageIos} width={203} height={70} alt="downloadAppStore"/>
         </a>
         <a href="https://play.google.com/store/apps/details?id=rolstoel.hockey">
-            <Image src={ImageAndroid} width={222} height={70}/>
+            <Image src={ImageAndroid} width={222} height={70} alt="downloadGooglePlay"/>
         </a>
     </div>
     <VerticalFeatureRow
