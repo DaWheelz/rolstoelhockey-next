@@ -16,6 +16,7 @@ export default function Navbar() {
         <img src='/img/navbar_logo_rolstoelhockey.png' alt="rolstoelhockey_logo" width="100" height="28" className="toolbar__logo" />
         </Link>
         <button
+          aria-label="menu-collapse"
           className=" inline-flex p-3 hover:bg-orange-500 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
           onClick={handleClick}
         >
