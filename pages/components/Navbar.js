@@ -13,7 +13,7 @@ export default function Navbar() {
     <>
       <nav className="flex items-center flex-wrap bg-gradient-to-r from-orange-600 to-orange-500 p-3">
         <Link href="/overview">
-        <Image src='/img/navbar_logo_rolstoelhockey.png' alt="" width={100} height={28} className="toolbar__logo" />
+        <Image src='/img/navbar_logo_rolstoelhockey.png' alt="rolstoelhockey_logo" layout="responsive" quality={100} width={100} height={28} className="toolbar__logo" />
         </Link>
         <button
           className=" inline-flex p-3 hover:bg-orange-500 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
