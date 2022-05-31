@@ -13,6 +13,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta charset="UTF-8" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png"></link>
+        <link rel="canonical" href="https://rolstoelhockey.app"/>
         <meta name='theme-color' content="#ff7d00"/>
       </Head>
     <Layout>
