@@ -33,7 +33,7 @@ function FrontPage() {
       </Background>
       <Background>
         <VerticalFeatures />
-        <Sponsors image="/public/img/nederlof.png" />
+        <Sponsors image="/nederlof.png" />
       </Background>
       <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
           Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
