@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import CookieConsent from "react-cookie-consent";
 import "tailwindcss/tailwind.css";
+import sponsor_logo from '../public/img/nederlof.png'
 
 import { Section } from '../home_components/layout/Section';
 import { HeroOneButton } from '../home_components/HeroOneButton';
 import { Button } from '../home_components/Button';
 import { Background } from '../home_components/Background';
 import { VerticalFeatures } from '../home_components/layout/VerticalFeatures';
-import { Sponsors } from '../home_components/Sponsor';
 
 function FrontPage() {
   return (
@@ -33,7 +33,10 @@ function FrontPage() {
       </Background>
       <Background>
         <VerticalFeatures />
-        <Sponsors image="../public/img/nederlof.png" />
+        <div className="mb-6 text-center sm:px-6">
+          <div className="mt-6 mb-6 text-xl">Mede mogelijk gemaakt door : </div>
+          <img className="rounded-xl shadow-lg mb-6 object-center inline" width={118} height={110} src="/img/nederlof.png" />
+        </div>
       </Background>
       <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
           Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
