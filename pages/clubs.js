@@ -23,12 +23,12 @@ export async function getStaticProps() {
 function Club ({clubsH, clubsE}){
     return (
         <div className="min-h-screen p-4">
+            <div style={{width:'15rem', maxHeight:'10rem'}}>
+                    <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+            </div>
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
-                <div style={{width:'15rem', maxHeight:'10rem'}}>
-                    <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-                </div>
                     <table className="min-w-full">
                     <tbody>
                         <td className="py-4 whitespace-nowrap font-medium text-lg underline decoration-orange-600">Teams - H</td>

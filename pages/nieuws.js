@@ -38,6 +38,9 @@ export async function getStaticProps() {
     return (
     <div className="p-7 bg-gray-100 min-h-screen">
         <h2 className="text-4xl font-bold mt-0 mb-6">Nieuws</h2>
+        <div style={{justifyContent: 'center', display: 'flex', width: '15rem', maxHeight: '10rem'}}>
+          <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+        </div>
         <div>
         {posts.map((post) => {
           return (
@@ -75,14 +78,9 @@ export async function getStaticProps() {
             </div>
           </div>
           </Link>
-          
           );
         })}
-        <div style={{justifyContent: 'center', display: 'flex', width: '15rem', maxHeight: '10rem'}}>
-          <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-        </div>
       </div>
     </div>
-      
-    );
+     );
   };
