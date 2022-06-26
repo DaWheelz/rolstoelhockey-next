@@ -78,7 +78,7 @@ export async function getStaticProps() {
           
           );
         })}
-        <div style={{justifyContent: 'center', display: 'flex'}}>
+        <div style={{justifyContent: 'center', display: 'flex', width: '15rem', maxHeight: '10rem'}}>
           <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
         </div>
       </div>
