@@ -91,7 +91,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
-                <AdComponent />
               </div>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
