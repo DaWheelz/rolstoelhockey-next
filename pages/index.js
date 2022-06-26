@@ -1,5 +1,6 @@
 import React, { Component, View, useState} from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import Image from 'next/image';
 import CookieConsent from "react-cookie-consent";
 import "tailwindcss/tailwind.css";
