@@ -23,7 +23,7 @@ export async function getStaticProps() {
 function Club ({clubsH, clubsE}){
     return (
         <div className="min-h-screen p-4">
-            <div style={{width:'15rem', maxHeight:'10rem'}}>
+            <div style={{width:'15rem', maxHeight:'10rem', minWidth: '15rem'}}>
                     <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
             </div>
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
