@@ -34,10 +34,6 @@ function FrontPage() {
       </Background>
       <Background>
         <VerticalFeatures />
-        <div className="mb-6 text-center sm:px-6">
-          <div className="mt-6 mb-6 text-xl">Mede mogelijk gemaakt door : </div>
-          <img className="rounded-xl shadow-lg mb-6 object-center inline" width={118} height={110} src="/img/nederlof.png" />
-        </div>
       </Background>
       <CookieConsent  location="bottom" buttonText="Akkoord" cookieName="agreesPolicy" buttonStyle={{background: "#ff7b00"}} expires={999} overlay>
           Deze website gebruikt cookies om de gebruiksvriendelijkheid van de website te verbeteren.
