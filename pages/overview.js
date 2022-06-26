@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import AdComponent from './components/adComponent'
+import {Adsense} from '@ctrl/react-adsense';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -91,6 +91,13 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
+              <Adsense
+                client="ca-pub-3103181417222460"
+                slot="4495490030"
+                style={{ display: 'block' }}
+                layout="in-article"
+                format="fluid"
+              />
               </div>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
