@@ -90,13 +90,17 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
-                <ins className="adsbygoogle"
-                  style={{display:'block'}}
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
+                  crossorigin="anonymous"></script>
+              <ins class="adsbygoogle"
+                  style="display:block"
                   data-ad-client="ca-pub-3103181417222460"
                   data-ad-slot="9945355702"
                   data-ad-format="auto"
-                  data-full-width-responsive="true">
-                </ins>
+                  data-full-width-responsive="true"></ins>
+              <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
               </div>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
