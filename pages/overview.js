@@ -93,7 +93,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
                   crossOrigin="anonymous"></script>
               <ins className="adsbygoogle"
-                  style={{display:block}}
+                  style={{display: 'block'}}
                   data-ad-client="ca-pub-3103181417222460"
                   data-ad-slot="9945355702"
                   data-ad-format="auto"
