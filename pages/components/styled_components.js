@@ -67,7 +67,7 @@ color: #ef790c
       border-bottom: 1px solid grey;
 }
 
-@media (min-width: 1231px) {
+@media (min-width: 1251px) {
 
   .pageblock {
       margin: 20px 20px 20px 20px;
@@ -125,10 +125,17 @@ color: #ef790c
     display: flex;
     width:100% !important
 }
+.mobileAd {
+    width:15rem
+}
 }
 
 /* mobile */
-@media (max-width: 1230x) {
+@media (max-width: 1250x) {
+    .mobileAd {
+        width:15rem
+        max-height:10rem
+    }
   .event {
       width: 100%;
       padding: 10px;

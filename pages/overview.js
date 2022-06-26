@@ -46,7 +46,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Container style={{maxWidth: '100% !important' }}>
+        <Container style={{width: '100% !important', maxWidth: '100% !important' }}>
           <Box>
             {children}
           </Box>
@@ -90,10 +90,10 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </Box>
           <TabPanel value={value} index={0}>
             <div className='overviewAd'>
-              <div style={{width: '50rem', backgroundColor: '#eeeeee'}}>
+              <div className='mobileAd'>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
-              <div style={{width: '50rem'}}> 
+              <div style={{width: '100%'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
                   {matchesH.map((match) => {
                     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
@@ -112,7 +112,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                     })}
               </div>
-              <div style={{width: '50rem', backgroundColor: '#eeeeee'}}>
+              <div className='mobileAd'>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
