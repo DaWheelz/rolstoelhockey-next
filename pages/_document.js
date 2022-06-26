@@ -28,10 +28,6 @@ export default class MyDocument extends Document {
     }
   }
 
-  componentDidMount() {
-    (adsbygoogle = window.adsbygoogle || []).push({})
-  }
-
   render() {
     return (
       <Html>

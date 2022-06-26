@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import {Adsense} from '@ctrl/react-adsense';
+import GoogleAd from './components/GoogleAd';
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -90,10 +90,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </Box>
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <Adsense
-                client="ca-pub-3103181417222460"
-                slot="4495490030"
-              />
+              <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
                   {matchesH.map((match) => {
