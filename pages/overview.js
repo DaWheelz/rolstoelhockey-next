@@ -89,9 +89,11 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-              <div style={{width: '70rem'}}> 
+            <div className='overviewAd'>
+              <div style={{width: '30rem', backgroundColor: '#eeeeee'}}>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+              <div style={{width: 'auto'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
                   {matchesH.map((match) => {
                     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)

@@ -68,6 +68,7 @@ color: #ef790c
 }
 
 @media (min-width: 1231px) {
+
   .pageblock {
       margin: 20px 20px 20px 20px;
   }
@@ -120,6 +121,9 @@ color: #ef790c
   height: fit-content;
   margin: auto;
   }
+  .overviewAd {
+    display: flex;
+}
 }
 
 /* mobile */
