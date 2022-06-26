@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import AdComponent from './components/adComponent'
 
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const options2 = { year: 'numeric', month: 'numeric', day: 'numeric' };
@@ -90,15 +91,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
-              <ins className="adsbygoogle"
-                  style={{display: 'block'}}
-                  data-ad-client="ca-pub-3103181417222460"
-                  data-ad-slot="9945355702"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-              <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
+                <AdComponent />
               </div>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
