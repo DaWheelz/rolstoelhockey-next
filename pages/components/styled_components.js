@@ -127,7 +127,7 @@ color: #ef790c
 }
 .mobileAd {
     padding-left:20px;
-    padding-right:20px
+    padding-right:20px;
     width:15rem
 }
 }
@@ -135,8 +135,8 @@ color: #ef790c
 /* mobile */
 @media (max-width: 1250x) {
     .mobileAd {
-        width:15rem
-        max-height:10rem
+        width:15rem;
+        max-height:10rem;
     }
   .event {
       width: 100%;
