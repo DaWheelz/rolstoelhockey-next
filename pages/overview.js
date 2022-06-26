@@ -46,7 +46,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Container>
-          <ins class="adsbygoogle"
+          <ins className="adsbygoogle"
             style="display:block"
             data-ad-client="ca-pub-3103181417222460"
             data-ad-slot="9945355702"
