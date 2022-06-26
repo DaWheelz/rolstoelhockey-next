@@ -33,12 +33,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <Script id="Adsense-id" async
-          onError={(e) => { console.error("Script failed to load", e);}}
-          strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
-          crossorigin="anonymous"
-        />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
+          crossorigin="anonymous"></script>
             {/* Global Site Tag (gtag.js) - Google Analytics */}
             <script
                 async
