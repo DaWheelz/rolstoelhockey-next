@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import GoogleAd from './components/GoogleAd';
 
 var textColor = "#1f1f1f";
 
@@ -25,6 +26,9 @@ function Club ({clubsH, clubsE}){
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
+                <div style={{width:'15rem', maxHeight:'10rem'}}>
+                    <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+                </div>
                     <table className="min-w-full">
                     <tbody>
                         <td className="py-4 whitespace-nowrap font-medium text-lg underline decoration-orange-600">Teams - H</td>

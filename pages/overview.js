@@ -118,97 +118,127 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <div className='match-title'>Laatste uitslagen - E</div>
-            {matchesE.map((match) => {
-              let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
-              return (
-                <div key={match._id} className="match-group">
-                  <div className="match-time-date">
-                    <div className="match-time">{match.played_at}</div>
-                    <div className="match-date text-orange-600">{game_date}</div>
-                  </div>
-                  <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score text-orange-600">{match.scoreA}</div>
-                  <div className="match-score"> - </div>
-                  <div className="match-score text-orange-600">{match.scoreB}</div>
-                  <div className="match-teamb">{match.teamB}</div>
-                </div>
-              )
-              })}
+          <div className='overviewAd'>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+              <div style={{width: '100%'}}> 
+                <div className='match-title'>Laatste uitslagen - E</div>
+                  {matchesE.map((match) => {
+                    let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
+                    return (
+                      <div key={match._id} className="match-group">
+                        <div className="match-time-date">
+                          <div className="match-time">{match.played_at}</div>
+                          <div className="match-date text-orange-600" >{game_date}</div>
+                        </div>
+                        <div className="match-teama">{match.teamA}</div>
+                        <div className="match-score text-orange-600">{match.scoreA}</div>
+                        <div className="match-score"> - </div>
+                        <div className="match-score text-orange-600">{match.scoreB}</div>
+                        <div className="match-teamb">{match.teamB}</div>
+                      </div>
+                      )
+                    })}
+              </div>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+            </div>
           </TabPanel>
           <TabPanel value={value} index={2}>
-              <div className='match-title'>Competitedagen - H</div>
-              {gamedaysH.map((day) => {
-                let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
-                      let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
-                      let address = ""
-                      let city = ""
-                
-                      if (day.address === null || day.address === "") {
-                        address = "Unknown"
-                        city = "Unknown"
-                      }
-                      else {
-                        address = day.address
-                        city = day.city
-                      }
-                      return(
-                        <div key={day._id} className="event">
-                        <div className="event-mid">
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '400' }}>{day.title}</b></div>
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
-                          <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
-                          <a href={locationurl}>
-                          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                              <span>Navigeer</span>
-                          </button>
-                          </a>
+            <div className='overviewAd'>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+              <div style={{width: '100%'}}>
+                <div className='match-title'>Competitedagen - H</div>
+                {gamedaysH.map((day) => {
+                  let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
+                        let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
+                        let address = ""
+                        let city = ""
+                  
+                        if (day.address === null || day.address === "") {
+                          address = "Unknown"
+                          city = "Unknown"
+                        }
+                        else {
+                          address = day.address
+                          city = day.city
+                        }
+                        return(
+                          <div key={day._id} className="event">
+                          <div className="event-mid">
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '400' }}>{day.title}</b></div>
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
+                            <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
+                            <a href={locationurl}>
+                            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                                <span>Navigeer</span>
+                            </button>
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                      )
-                })}
+                        )
+                  })} 
+              </div>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+            </div>
           </TabPanel>
           <TabPanel value={value} index={3}>
-            <div className='match-title'>Competitedagen - E</div>
-            {gamedaysE.map((day) => {
-                let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
-                      let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
-                      let address = ""
-                      let city = ""
-                
-                      if (day.address === null || day.address === "") {
-                        address = "Unknown"
-                        city = "Unknown"
-                      }
-                      else {
-                        address = day.address
-                        city = day.city
-                      }
-                      return(
-                        <div key={day._id} className="event">
-                        <div className="event-mid">
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '400' }}>{day.title}</b></div>
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
-                          <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
-                          <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
-                          <a href={locationurl}>
-                          <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                              <span>Navigeer</span>
-                          </button>
-                          </a>
+            <div className='overviewAd'>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+              <div style={{width: '100%'}}>
+                <div className='match-title'>Competitedagen - E</div>
+                {gamedaysE.map((day) => {
+                  let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
+                        let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
+                        let address = ""
+                        let city = ""
+                  
+                        if (day.address === null || day.address === "") {
+                          address = "Unknown"
+                          city = "Unknown"
+                        }
+                        else {
+                          address = day.address
+                          city = day.city
+                        }
+                        return(
+                          <div key={day._id} className="event">
+                          <div className="event-mid">
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '400' }}>{day.title}</b></div>
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Datum: </b><br />{game_date}</div>
+                            <div style={{ width: '100%', margin: '5px' }}><b style={{ fontWeight: '300' }}>Adres: </b><br />{address}</div>
+                            <div style={{ width: '100%', margin: '5px', marginBottom: '15px' }}><b style={{ fontWeight: '300' }}>Stad: </b><br />{city}</div>
+                            <a href={locationurl}>
+                            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap='round' strokeLinejoin='round' d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap='round' strokeLinejoin='round' d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                                <span>Navigeer</span>
+                            </button>
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                      )
-                })}
+                        )
+                  })} 
+              </div>
+              <div className='mobileAd'>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+              </div>
+            </div>
           </TabPanel>
         </div>
   )

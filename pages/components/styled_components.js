@@ -126,6 +126,8 @@ color: #ef790c
     width:100% !important
 }
 .mobileAd {
+    padding-left:20px;
+    padding-right:20px
     width:15rem
 }
 }
