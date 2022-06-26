@@ -46,13 +46,6 @@ function TabPanel(props) {
     >
       {value === index && (
         <Container>
-          <ins className="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3103181417222460"
-            data-ad-slot="9945355702"
-            data-ad-format="auto"
-            data-full-width-responsive="true">
-          </ins>
           <Box>
             {children}
           </Box>
@@ -95,23 +88,37 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-             <div className='match-title'>Laatste uitslagen - H</div>
-             {matchesH.map((match) => {
-              let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
-              return (
-                <div key={match._id} className="match-group">
-                  <div className="match-time-date">
-                    <div className="match-time">{match.played_at}</div>
-                    <div className="match-date text-orange-600" >{game_date}</div>
-                  </div>
-                  <div className="match-teama">{match.teamA}</div>
-                  <div className="match-score text-orange-600">{match.scoreA}</div>
-                  <div className="match-score"> - </div>
-                  <div className="match-score text-orange-600">{match.scoreB}</div>
-                  <div className="match-teamb">{match.teamB}</div>
-                </div>
-              )
-              })}
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <div>
+                <ins className="adsbygoogle"
+                  style={{display:'block'}}
+                  data-ad-client="ca-pub-3103181417222460"
+                  data-ad-slot="9945355702"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true">
+                </ins>
+              </div>
+              <div style={{width: '70rem'}}> 
+                <div className='match-title'>Laatste uitslagen - H</div>
+                  {matchesH.map((match) => {
+                    let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
+                    return (
+                      <div key={match._id} className="match-group">
+                        <div className="match-time-date">
+                          <div className="match-time">{match.played_at}</div>
+                          <div className="match-date text-orange-600" >{game_date}</div>
+                        </div>
+                        <div className="match-teama">{match.teamA}</div>
+                        <div className="match-score text-orange-600">{match.scoreA}</div>
+                        <div className="match-score"> - </div>
+                        <div className="match-score text-orange-600">{match.scoreB}</div>
+                        <div className="match-teamb">{match.teamB}</div>
+                      </div>
+                      )
+                    })}
+              </div>
+              <div></div>
+            </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <div className='match-title'>Laatste uitslagen - E</div>
