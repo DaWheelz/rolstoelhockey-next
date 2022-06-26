@@ -1,4 +1,4 @@
-import React, { Component, View, useState} from 'react';
+import React, { Component, View, useState, useEffect} from 'react';
 import GlobalStyle from './components/styled_components';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
