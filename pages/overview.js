@@ -91,9 +91,9 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
               <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
-                  crossorigin="anonymous"></script>
-              <ins class="adsbygoogle"
-                  style="display:block"
+                  crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                  style={{display:block}}
                   data-ad-client="ca-pub-3103181417222460"
                   data-ad-slot="9945355702"
                   data-ad-format="auto"
