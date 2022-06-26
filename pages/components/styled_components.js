@@ -123,6 +123,7 @@ color: #ef790c
   }
   .overviewAd {
     display: flex;
+    width:100% !important
 }
 }
 
