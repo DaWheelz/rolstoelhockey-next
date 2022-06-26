@@ -90,8 +90,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <div>
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3103181417222460"
-                  crossOrigin="anonymous"></script>
               <ins className="adsbygoogle"
                   style={{display: 'block'}}
                   data-ad-client="ca-pub-3103181417222460"
