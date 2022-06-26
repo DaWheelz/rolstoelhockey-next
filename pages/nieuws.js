@@ -1,5 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
+import {Adsense} from '@ctrl/react-adsense';
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_URL_ENDPOINT)
 
@@ -74,8 +75,13 @@ export async function getStaticProps() {
             </div>
           </div>
           </Link>
+          
           );
         })}
+        <Adsense
+        client="ca-pub-3103181417222460"
+        slot="4495490030"
+      />
       </div>
     </div>
       

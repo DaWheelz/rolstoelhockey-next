@@ -93,9 +93,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
               <Adsense
                 client="ca-pub-3103181417222460"
                 slot="4495490030"
-                style={{ display: 'block' }}
-                layout="in-article"
-                format="fluid"
               />
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
