@@ -90,7 +90,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </Box>
           <TabPanel value={value} index={0}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <div>
               <Adsense
                 client="ca-pub-3103181417222460"
                 slot="4495490030"
@@ -98,7 +97,6 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                 layout="in-article"
                 format="fluid"
               />
-              </div>
               <div style={{width: '70rem'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
                   {matchesH.map((match) => {
