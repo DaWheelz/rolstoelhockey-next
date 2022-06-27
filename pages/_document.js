@@ -33,6 +33,15 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `var flex = document.getElementsByClassName('flex-master')[0];
+          const observer = new MutationObserver(function (mutations, observer) {
+              flex.style.height = "";
+          })
+          observer.observe(flex, {
+              attributes: true,
+              attributeFilter: ['style']`,
+        }} />
             {/* Global Site Tag (gtag.js) - Google Analytics */}
             <script
                 async
