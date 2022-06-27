@@ -125,18 +125,14 @@ color: #ef790c
     display: flex;
     width:100% !important
 }
-.mobileAd {
-    padding-left:20px;
-    padding-right:20px;
-    width:15rem
-}
+
 }
 
 /* mobile */
 @media (max-width: 1250x) {
     .mobileAd {
-        width:15rem;
-        max-height:10rem;
+        max-height:50px !important;
+        max-width: 120px !important;
     }
   .event {
       width: 100%;
