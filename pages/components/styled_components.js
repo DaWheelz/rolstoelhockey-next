@@ -121,23 +121,11 @@ color: #ef790c
   height: fit-content;
   margin: auto;
   }
-  .overviewAd {
-    display: flex;
-    width:100% !important
-}
-.mobileAd {
-    padding-left:20px;
-    padding-right:20px;
-    width:15rem
-}
 }
 
 /* mobile */
 @media (max-width: 1250x) {
-    .mobileAd {
-        width:15rem;
-        max-height:10rem;
-    }
+    
   .event {
       width: 100%;
       padding: 10px;

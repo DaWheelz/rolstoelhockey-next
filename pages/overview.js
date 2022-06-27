@@ -89,8 +89,8 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
-            <div className='overviewAd'>
-              <div className='mobileAd'>
+            <div>
+              <div>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
               <div style={{width: '100%'}}> 
@@ -112,14 +112,14 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                     })}
               </div>
-              <div className='mobileAd'>
+              <div >
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
-          <div className='overviewAd'>
-              <div className='mobileAd'>
+          <div>
+              <div>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
               <div style={{width: '100%'}}> 
@@ -141,14 +141,14 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                     })}
               </div>
-              <div className='mobileAd'>
+              <div>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <div className='overviewAd'>
-              <div className='mobileAd'>
+            <div>
+              <div>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
               <div style={{width: '100%'}}>
@@ -188,14 +188,14 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                         )
                   })} 
               </div>
-              <div className='mobileAd'>
+              <div >
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={3}>
-            <div className='overviewAd'>
-              <div className='mobileAd'>
+            <div >
+              <div>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
               <div style={{width: '100%'}}>
@@ -235,7 +235,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                         )
                   })} 
               </div>
-              <div className='mobileAd'>
+              <div >
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
