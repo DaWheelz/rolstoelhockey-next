@@ -46,7 +46,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Container style={{width: '100% !important', maxWidth: '100% !important' }}>
+        <Container>
           <Box>
             {children}
           </Box>
@@ -92,7 +92,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             <div>
               <div style={{width: '100%'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
-                <div>
+                <div style={{height: '90px', minWidth: '120px'}}>
                   <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
                 </div>
                   {matchesH.map((match) => {
@@ -112,7 +112,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                     })}
               </div>
-              <div >
+              <div style={{height: '90px', minWidth: '120px'}}>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
@@ -121,7 +121,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           <div>
               <div style={{width: '100%'}}> 
                 <div className='match-title'>Laatste uitslagen - E</div>
-                <div>
+                <div style={{height: '90px', minWidth: '120px'}}>
                   <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
                 </div>
                   {matchesE.map((match) => {
@@ -141,7 +141,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                       )
                     })}
               </div>
-              <div>
+              <div style={{height: '90px', minWidth: '120px'}}>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
@@ -150,7 +150,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             <div>
               <div style={{width: '100%'}}>
                 <div className='match-title'>Competitedagen - H</div>
-                <div>
+                <div style={{height: '90px', minWidth: '120px'}}>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
                 </div>
                 {gamedaysH.map((day) => {
@@ -188,7 +188,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                         )
                   })} 
               </div>
-              <div >
+              <div style={{height: '90px', minWidth: '120px'}}>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
@@ -197,7 +197,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
             <div >
               <div style={{width: '100%'}}>
                 <div className='match-title'>Competitedagen - E</div>
-                <div>
+                <div style={{height: '90px', minWidth: '120px'}}>
                   <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
                 </div>
                 {gamedaysE.map((day) => {
@@ -235,7 +235,7 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
                         )
                   })} 
               </div>
-              <div >
+              <div style={{height: '90px', minWidth: '120px'}}>
                 <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
               </div>
             </div>
