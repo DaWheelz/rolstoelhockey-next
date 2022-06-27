@@ -22,7 +22,7 @@ class GoogleAd extends Component {
       <div className={classNames}>
         <ins
           className="adsbygoogle infeed"
-          style={{display: 'block'}}
+          style={{display: 'block', margin: '5px'}}
           data-ad-client={googleAdId}
           data-ad-slot={slot}
           data-ad-format={format || "fluid"}
