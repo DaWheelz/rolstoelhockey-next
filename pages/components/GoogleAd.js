@@ -22,7 +22,7 @@ class GoogleAd extends Component {
       <div className={classNames}>
         <ins
           className="adsbygoogle"
-          style={style || { display: 'inline-block', textAlign: "center", height: '90px' }}
+          style={style || { display: 'inline-block', textAlign: "center", height: '90px', width: '15rem' }}
           data-ad-client={googleAdId}
           data-ad-slot={slot}
           data-ad-format={format || "auto"}

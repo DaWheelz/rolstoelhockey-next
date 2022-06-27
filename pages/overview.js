@@ -90,11 +90,11 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </Box>
           <TabPanel value={value} index={0}>
             <div>
-              <div>
-                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-              </div>
               <div style={{width: '100%'}}> 
                 <div className='match-title'>Laatste uitslagen - H</div>
+                <div>
+                  <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+                </div>
                   {matchesH.map((match) => {
                     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
                     return (
@@ -119,11 +119,11 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </TabPanel>
           <TabPanel value={value} index={1}>
           <div>
-              <div>
-                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-              </div>
               <div style={{width: '100%'}}> 
                 <div className='match-title'>Laatste uitslagen - E</div>
+                <div>
+                  <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+                </div>
                   {matchesE.map((match) => {
                     let game_date = new Date(match.gameday_info.gamedate).toLocaleDateString('nl-NL', options2)
                     return (
@@ -148,11 +148,11 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </TabPanel>
           <TabPanel value={value} index={2}>
             <div>
-              <div>
-                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-              </div>
               <div style={{width: '100%'}}>
                 <div className='match-title'>Competitedagen - H</div>
+                <div>
+                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+                </div>
                 {gamedaysH.map((day) => {
                   let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
                         let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
@@ -195,11 +195,11 @@ function Home({matchesH, matchesE, gamedaysH, gamedaysE}) {
           </TabPanel>
           <TabPanel value={value} index={3}>
             <div >
-              <div>
-                <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
-              </div>
               <div style={{width: '100%'}}>
                 <div className='match-title'>Competitedagen - E</div>
+                <div>
+                  <GoogleAd slot="4495490030" googleAdId="ca-pub-3103181417222460"/>
+                </div>
                 {gamedaysE.map((day) => {
                   let game_date = new Date(day.gamedate).toLocaleDateString('nl-NL', options)
                         let locationurl = "https://maps.google.com/?q=" + day.address + ", " + day.city
