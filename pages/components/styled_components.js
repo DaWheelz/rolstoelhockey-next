@@ -20,6 +20,21 @@ li {
   box-sizing: border-box;
 }
 
+@media (min-width: 350px) {
+    .infeed {
+      height: 180px;
+    }
+ @media (min-width: 500px) {
+    .infeed {
+      height: 130px;
+    }
+  }
+ @media (min-width: 800px) {
+    .infeed {
+      height: 200px;
+    }
+  }
+
 .gridstyle {
   margin-top: 4rem;
 }
